@@ -857,7 +857,7 @@
             </div>
 
             <div class="cta-section">
-                <button class="btn-primary">GARANTIR ACESSO AGORA</button>
+                <a href="#ofertas" class="btn-primary">GARANTIR ACESSO AGORA</a>
                 <p class="cta-info">✓ Acesso imediato • ✓ Garantia de 7 dias</p>
             </div>
         </div>
@@ -910,10 +910,17 @@
             <!-- Vídeo do Painel em Ação -->
             <div style="margin-bottom: 48px;">
                 <div class="video-container" style="max-width: 896px; margin: 0 auto;">
-                    <video controls muted loop>
-                        <source src="https://static.lumi.new/material/f9/f97370f9db3d76f4161f881ee70015fe.mp4" type="video/mp4">
-                        Seu navegador não suporta vídeo HTML5.
-                    </video>
+                    <script src="https://fast.wistia.com/player.js" async></script>
+                    <script src="https://fast.wistia.com/embed/wkc2wjaez1.js" async type="module"></script>
+                    <style>
+                        wistia-player[media-id='wkc2wjaez1']:not(:defined) { 
+                            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/wkc2wjaez1/swatch'); 
+                            display: block; 
+                            filter: blur(5px); 
+                            padding-top:55.0%; 
+                        }
+                    </style>
+                    <wistia-player media-id="wkc2wjaez1" aspect="1.8181818181818181"></wistia-player>
                 </div>
                 <p style="text-align: center; color: #9ca3af; margin-top: 16px; font-size: 18px;">👆 Veja o Painel Legit XIT em ação</p>
             </div>
@@ -953,7 +960,7 @@
     </section>
 
     <!-- Ofertas Section -->
-    <section class="section" style="background: linear-gradient(to bottom, #000, rgba(127, 29, 29, 0.1));">
+    <section id="ofertas" class="section" style="background: linear-gradient(to bottom, #000, rgba(127, 29, 29, 0.1));">
         <div class="container">
             <h2 class="section-title">
                 Escolha Seu <span style="color: #dc2626;">Plano</span>
@@ -1136,7 +1143,7 @@
                 </p>
             </div>
 
-            <button class="btn-primary" style="padding: 20px 64px; font-size: 20px;">TESTAR SEM RISCO AGORA</button>
+            <a href="#ofertas" class="btn-primary" style="padding: 20px 64px; font-size: 20px;">TESTAR SEM RISCO AGORA</a>
         </div>
     </section>
 
