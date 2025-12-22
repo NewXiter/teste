@@ -268,6 +268,8 @@
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 25px 50px -12px rgba(220, 38, 38, 0.5);
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-primary:hover {
@@ -507,6 +509,9 @@
             border: none;
             cursor: pointer;
             transition: all 0.3s;
+            text-decoration: none;
+            display: block;
+            text-align: center;
         }
         
         .btn-plan.primary {
@@ -905,7 +910,7 @@
             <!-- Vídeo do Painel em Ação -->
             <div style="margin-bottom: 48px;">
                 <div class="video-container" style="max-width: 896px; margin: 0 auto;">
-                    <video controls autoplay muted loop>
+                    <video controls muted loop>
                         <source src="https://static.lumi.new/material/f9/f97370f9db3d76f4161f881ee70015fe.mp4" type="video/mp4">
                         Seu navegador não suporta vídeo HTML5.
                     </video>
@@ -956,6 +961,7 @@
             <p class="section-subtitle">Todos os planos incluem atualizações e suporte</p>
 
             <div class="grid grid-3">
+                <!-- Plano MENSAL -->
                 <div class="plan-card">
                     <div class="plan-header">
                         <h3 class="plan-name">MENSAL</h3>
@@ -973,32 +979,13 @@
                         <li>Vídeo tutorial incluído</li>
                     </ul>
 
-                    <button class="btn-plan secondary">COMEÇAR AGORA</button>
+                    <a href="https://go.perfectpay.com.br/PPU38CQ52PH" class="btn-plan secondary" target="_blank">COMEÇAR AGORA</a>
                 </div>
 
+                <!-- Plano PERMANENTE (Mais Popular - NO MEIO) -->
                 <div class="plan-card popular">
                     <div class="popular-badge">MAIS POPULAR</div>
                     
-                    <div class="plan-header">
-                        <h3 class="plan-name">TRIMESTRAL</h3>
-                        <div>
-                            <span class="plan-price">R$ 69,90</span>
-                            <p class="plan-period">3 meses</p>
-                        </div>
-                    </div>
-
-                    <ul class="plan-features">
-                        <li>Tudo do plano mensal</li>
-                        <li>Economia de 22%</li>
-                        <li>Prioridade no suporte</li>
-                        <li>Atualizações vitalícias</li>
-                        <li>Bônus exclusivos</li>
-                    </ul>
-
-                    <button class="btn-plan primary">COMEÇAR AGORA</button>
-                </div>
-
-                <div class="plan-card">
                     <div class="plan-header">
                         <h3 class="plan-name">PERMANENTE</h3>
                         <div>
@@ -1008,14 +995,35 @@
                     </div>
 
                     <ul class="plan-features">
-                        <li>Tudo do plano trimestral</li>
+                        <li>Acesso completo ao painel</li>
                         <li>Acesso para sempre</li>
                         <li>Atualizações PRA SEMPRE</li>
-                        <li>Suporte VIP</li>
+                        <li>Suporte VIP prioritário</li>
                         <li>Melhor custo-benefício</li>
                     </ul>
 
-                    <button class="btn-plan secondary">COMEÇAR AGORA</button>
+                    <a href="https://go.perfectpay.com.br/PPU38CQ52QR" class="btn-plan primary" target="_blank">COMEÇAR AGORA</a>
+                </div>
+
+                <!-- Plano TRIMESTRAL -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">TRIMESTRAL</h3>
+                        <div>
+                            <span class="plan-price">R$ 69,90</span>
+                            <p class="plan-period">3 meses</p>
+                        </div>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li>Acesso completo ao painel</li>
+                        <li>Economia de 22%</li>
+                        <li>Prioridade no suporte</li>
+                        <li>Atualizações constantes</li>
+                        <li>Bônus exclusivos</li>
+                    </ul>
+
+                    <a href="https://go.perfectpay.com.br/PPU38CQ52QP" class="btn-plan secondary" target="_blank">COMEÇAR AGORA</a>
                 </div>
             </div>
         </div>
@@ -1093,7 +1101,6 @@
 
                 <div class="card">
                     <div style="display: flex; gap: 4px; margin-bottom: 16px;">
-                        <svg width="20" height="20" fill="#dc2626" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                         <svg width="20" height="20" fill="#dc2626" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                         <svg width="20" height="20" fill="#dc2626" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                         <svg width="20" height="20" fill="#dc2626" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
