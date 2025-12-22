@@ -835,15 +835,114 @@
             
             <p>Acesso instantâneo ao melhor painel do Free Fire. Sem risco de ban, sem complicação. Apenas abra e use como um aplicativo normal.</p>
 
-            <!-- Video do VEED.io com autoplay -->
-            <div class="video-container">
-                <iframe
-                    src="https://www.veed.io/embed/2d7d7a6a-e75d-4347-8f45-201a799f92c4?watermark=0&color=&sharing=0&title=0&autoplay=1"
-                    title="Legit XIT - Video de Apresentação"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+            <!-- Video VCL Atualizado -->
+            <div id="paradisePlayer_1766373474419Container" class="paradise-player-container" style="position: relative; width: 100%; max-width: 800px; margin: 20px auto;">
+                <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.5em; font-weight: bold; color: #0fd712;">OFERTA ESPECIAL SO HOJE!</h3>
+                <div id="paradisePlayer_1766373474419Wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    <video 
+                        id="paradisePlayer_1766373474419" 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; cursor: pointer;" 
+                        playsinline 
+                        webkit-playsinline 
+                        preload="auto"
+                        oncontextmenu="return false;"
+                    >
+                        <source src="https://www.youtube.com/watch?v=SD8KYZ8MRpQ" type="video/mp4">
+                        Seu navegador não suporta vídeos HTML5.
+                    </video>
+                    
+                    <div id="paradisePlayer_1766373474419MuteOverlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background: #00000080; cursor: pointer; z-index: 20; backdrop-filter: blur(2px);">
+                        <div id="paradisePlayer_1766373474419MuteButton" class="paradise-mute-bounce" style="background: #0fd712; padding: clamp(1.2rem, 5vw, 2rem) clamp(1.5rem, 7vw, 3rem); border-radius: 12px; text-align: center; color: white; transition: transform 0.3s ease; --animation-intensity: 1; box-shadow: 0 8px 25px rgba(0,0,0,0.3); max-width: 90vw; box-sizing: border-box;">
+                            <div style="font-size: clamp(0.9rem, 2.5vw, 1.1rem); font-weight: 700; margin-bottom: 0.5rem;">Seu vídeo já começou!</div>
+                            <div style="margin-bottom: 0.6rem;"><img src="https://i.postimg.cc/2j9d2jbv/R.png" alt="Unmute" style="width:clamp(2.5rem, 8vw, 3.5rem); height:clamp(2.5rem, 8vw, 3.5rem); filter: brightness(0) invert(1); display: inline-block;"></div>
+                            <div style="font-size: clamp(0.8rem, 2.2vw, 1rem); font-weight: 500; opacity: 0.95;">Clique para ativar o som</div>
+                        </div>
+                    </div>
+                    
+                    <div id="paradisePlayer_1766373474419FakeProgressContainer" style="position: absolute; bottom: 5px; left: 10px; right: 10px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; z-index: 20; pointer-events: none; transition: bottom 0.3s ease;">
+                        <div id="paradisePlayer_1766373474419FakeProgressBar" style="height: 100%; background: linear-gradient(90deg, #0fd712, #21bfeb); border-radius: 2px; width: 0%; box-shadow: 0 0 8px #0fd71280;"></div>
+                    </div>
+                </div>
             </div>
+            
+            <style>
+                #paradisePlayer_1766373474419::-webkit-media-controls, #paradisePlayer_1766373474419::-webkit-media-controls-enclosure { display: none !important; }
+                
+                @keyframes paradise-fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+                @keyframes paradise-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+                @keyframes paradise-glow { 0%, 100% { box-shadow: 0 0 10px #8b5cf650; } 50% { box-shadow: 0 0 20px #8b5cf680, 0 0 30px #8b5cf660; } }
+                @keyframes paradise-shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+                @keyframes paradise-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+                @keyframes paradise-mute-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(calc(-10px * var(--animation-intensity))); } }
+                @keyframes paradise-mute-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(calc(1 + 0.05 * var(--animation-intensity))); } }
+                @keyframes paradise-mute-shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(calc(-5px * var(--animation-intensity))); } 75% { transform: translateX(calc(5px * var(--animation-intensity))); } }
+                @keyframes paradise-mute-glow { 0%, 100% { box-shadow: 0 0 calc(10px * var(--animation-intensity)) #0fd71250; } 50% { box-shadow: 0 0 calc(20px * var(--animation-intensity)) #0fd71280, 0 0 calc(30px * var(--animation-intensity)) #0fd71260; } }
+                @keyframes paradise-mute-scale { 0%, 100% { transform: scale(1); } 50% { transform: scale(calc(1 + 0.1 * var(--animation-intensity))); } }
+                @keyframes paradise-mute-rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                .paradise-player-container * { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+            </style>
+
+            <script>
+            (function() {
+                const video = document.getElementById('paradisePlayer_1766373474419');
+                const container = document.getElementById('paradisePlayer_1766373474419Container');
+                const playerWrapper = document.getElementById('paradisePlayer_1766373474419Wrapper');
+                const muteOverlay = document.getElementById('paradisePlayer_1766373474419MuteOverlay');
+                const fakeProgressBar = document.getElementById('paradisePlayer_1766373474419FakeProgressBar');
+
+                if (!video) { console.error('Paradise Player: Video element not found.'); return; }
+
+                video.addEventListener('click', () => {
+                    if (video.paused) video.play();
+                    else video.pause();
+                });
+
+                video.playbackRate = 1;
+                video.muted = true;
+                let playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => { /* Autoplay prevented */ });
+                }
+                
+                if (muteOverlay) {
+                    const unmuteHandler = () => {
+                        video.muted = false;
+                        video.currentTime = 0;
+                        video.play();
+                        muteOverlay.style.opacity = '0';
+                        setTimeout(() => { muteOverlay.style.display = 'none'; }, 300);
+                    };
+                    muteOverlay.addEventListener('click', unmuteHandler, { once: true });
+                    muteOverlay.addEventListener('touchend', unmuteHandler, { once: true });
+                }
+
+                let pacingMap = null;
+                
+                function getPredictiveProgress(currentTime) {
+                    if (!pacingMap || !video.duration) return (currentTime / video.duration);
+                    let segment = null;
+                    for (let i = 0; i < pacingMap.length - 1; i++) {
+                        if (currentTime >= pacingMap[i].t && currentTime <= pacingMap[i+1].t) {
+                            segment = { start: pacingMap[i], end: pacingMap[i+1] };
+                            break;
+                        }
+                    }
+                    if (!segment || (segment.end.t - segment.start.t) === 0) return (currentTime / video.duration);
+                    const timeInSegment = currentTime - segment.start.t;
+                    const segmentDuration = segment.end.t - segment.start.t;
+                    const progressInSegment = timeInSegment / segmentDuration;
+                    const visualRange = segment.end.p - segment.start.p;
+                    const visualProgress = segment.start.p + (progressInSegment * visualRange);
+                    return visualProgress / 100;
+                }
+
+                video.addEventListener('timeupdate', function() {
+                    if (!video.duration || !fakeProgressBar) return;
+                    let fakeProgressValue = getPredictiveProgress(video.currentTime);
+                    fakeProgressBar.style.width = (Math.min(fakeProgressValue, 1) * 100) + '%';
+                });
+            })();
+            </script>
 
             <div class="cta-section">
                 <button class="btn-primary">GARANTIR ACESSO AGORA</button>
