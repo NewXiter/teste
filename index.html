@@ -1164,7 +1164,10 @@
                         <li>Vídeo tutorial incluído</li>
                     </ul>
 
-                    <a href="https://go.perfectpay.com.br/PPU38CQ52PH" class="btn-plan secondary" target="_blank">COMEÇAR AGORA</a>
+                    <a href="#" class="btn-plan secondary" onclick="event.preventDefault(); document.getElementById('discountModal').classList.add('show');">COMEÇAR AGORA</a>
+                    <div class="plan-buyers-tag">
+                        <strong>247</strong> pessoas já compraram
+                    </div>
                 </div>
 
                 <!-- Plano PERMANENTE (Mais Popular - NO MEIO) -->
@@ -1188,6 +1191,9 @@
                     </ul>
 
                     <a href="https://go.perfectpay.com.br/PPU38CQ52QR" class="btn-plan primary" target="_blank">COMEÇAR AGORA</a>
+                    <div class="plan-buyers-tag">
+                        <strong>1.543</strong> pessoas já compraram
+                    </div>
                 </div>
 
                 <!-- Plano TRIMESTRAL -->
@@ -1209,6 +1215,9 @@
                     </ul>
 
                     <a href="https://go.perfectpay.com.br/PPU38CQ52QP" class="btn-plan secondary" target="_blank">COMEÇAR AGORA</a>
+                    <div class="plan-buyers-tag">
+                        <strong>682</strong> pessoas já compraram
+                    </div>
                 </div>
             </div>
         </div>
@@ -1467,6 +1476,34 @@
         </div>
     </div>
 
+    <!-- Modal de Desconto Pop-up -->
+    <div class="modal-overlay" id="discountModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            
+            <div class="modal-badge">🔥 OFERTA EXCLUSIVA</div>
+            
+            <h2 class="modal-title">ESPERA! Você está prestes a perder o melhor negócio! 💰</h2>
+            
+            <p class="modal-subtitle">O plano PERMANENTE está com DESCONTO ESPECIAL só aqui nesta página!</p>
+            
+            <div class="modal-price-container">
+                <div class="modal-old-price">De R$ 149,90</div>
+                <div class="modal-new-price">R$ 29,90</div>
+                <div class="modal-discount-text">80% DE DESCONTO - Só hoje!</div>
+            </div>
+            
+            <div class="modal-buttons">
+                <a href="https://go.perfectpay.com.br/PPU38CQ52SE" class="modal-btn modal-btn-primary" target="_blank">
+                    🎯 SIM! QUERO O DESCONTO PERMANENTE
+                </a>
+                <button class="modal-btn modal-btn-secondary" onclick="proceedToMonthly()">
+                    Não, prefiro continuar com o mensal
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -1580,6 +1617,23 @@
         
         // Show notification every 8 seconds
         setInterval(showRandomNotification, 8000);
+        
+        // Modal Functions
+        function closeModal() {
+            document.getElementById('discountModal').classList.remove('show');
+        }
+        
+        function proceedToMonthly() {
+            window.open('https://go.perfectpay.com.br/PPU38CQ52PH', '_blank');
+            closeModal();
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('discountModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
