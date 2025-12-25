@@ -229,6 +229,31 @@
             0% { left: -100%; }
             100% { left: 100%; }
         }
+        
+ /* Banner de Desconto - VERDE */
+        .discount-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: linear-gradient(to right, #22c55e, #4ade80, #22c55e);
+            color: white;
+            text-align: center;
+            padding: 8px 4px;
+            font-size: 14px;
+            font-weight: 900;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .discount-banner .highlight {
+            color: #fbbf24;
+        }
+        
+        @media (min-width: 640px) {
+            .discount-banner {
+                font-size: 18px;
+            }
 
         /* ===== HERO SECTION PROFISSIONAL ===== */
         .hero-premium {
