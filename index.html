@@ -1,728 +1,1846 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Painel Xit - New sensi</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>New Sensi - Painel XIT Premium | O Melhor do Brasil</title>
+    <meta name="description" content="O painel XIT mais avançado do Brasil. +10.000 players já dominam o Free Fire. Mira automática 100% capa, anti-ban garantido." />
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- CSS Frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/0b784d4cf8.js" crossorigin="anonymous"></script>
 
-  <style>
-    /* Variáveis de cor */
-    :root {
-      --bg: #0b0b0b;
-      --card: #141414;
-      --text: #e9f1f5;
-      --accent: #00e676;
-      --muted: #a9a9a9;
-    }
+    <style>
+        /* ===== VARIÁVEIS CSS PROFISSIONAIS ===== */
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #111111;
+            --card-bg: #1a1a1a;
+            --accent-primary: #00ff41;
+            --accent-secondary: #00e676;
+            --accent-danger: #ff4757;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --shadow-primary: 0 20px 60px rgba(0, 255, 65, 0.15);
+            --shadow-secondary: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --border-radius: 20px;
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gradient-primary: linear-gradient(135deg, #00ff41 0%, #00e676 50%, #39ff14 100%);
+            --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #111111 100%);
+        }
 
-    /* Reset básico */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+        /* ===== RESET E BASE - REMOÇÃO SCROLL LATERAL ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-    }
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
 
-    /* Cabeçalho banner */
-    #banner-cupom {
-      background-color: #222;
-      padding: 15px;
-      text-align: center;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 1.5rem;
-      color: #fff;
-      position: relative;
-      z-index: 999;
-    }
-    #banner-cupom span {
-      font-weight: bold;
-    }
+        body {
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            font-family: 'Inter', 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            width: 100%;
+            max-width: 100vw;
+        }
 
-    /* Estilo do banner superior */
-    #banner-cupom {
-      background: linear-gradient(90deg, #00e676, #00c853);
-      color: #fff;
-      font-size: 1.2rem;
-    }
+        .container,
+        .container-fluid {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
 
-    /* Hero section */
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: radial-gradient(circle at top left, rgba(0,230,118,.15), transparent 40%), 
-                  radial-gradient(circle at bottom right, rgba(0,0,0,.25), transparent 40%);
-    }
-    .hero img {
-      max-width: 100px;
-      margin-bottom: 16px;
-    }
-    .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    .hero h1 .neon {
-      color: #1ee08c;
-      text-shadow: 0 0 6px rgba(30,224,140,.8);
-    }
-    .hero h1 .neon-vermelho {
-      color: #ff4d4d;
-      text-shadow: 0 0 8px #ff4d4d, 0 0 16px #ff4d4d;
-    }
-    .hero p {
-      font-size: 1rem;
-      margin-top: 10px;
-    }
-    .btn-comprar {
-      margin-top: 20px;
-      font-weight: bold;
-      padding: 0.75rem 1.5rem;
-      font-size: 1.2rem;
-      border-radius: 30px;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .btn-comprar:hover {
-      transform: scale(1.05);
-    }
+        /* Background animado profissional */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 230, 118, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(255, 71, 87, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            animation: backgroundPulse 20s ease-in-out infinite;
+        }
 
-    /* Cards de benefícios */
-    .beneficios {
-      padding: 50px 20px;
-    }
-    .beneficios h2 {
-      text-align: center;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      color: #00e676;
-      text-shadow: 0 0 6px #00e676;
-    }
-    .cards-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .card-beneficio {
-      background-color: var(--card);
-      border-radius: 1rem;
-      width: 100%;
-      max-width: 350px;
-      padding: 20px;
-      border: 1px solid #222;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card-beneficio:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px #00e676;
-    }
-    .card-beneficio img {
-      width: 60px;
-      margin-bottom: 15px;
-    }
-    .card-beneficio h5 {
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .card-beneficio p {
-      font-size: 0.9rem;
-    }
+        @keyframes backgroundPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
 
-    /* Pacotes VIP */
-    .pacotes {
-      padding: 50px 20px;
-      background-color: #0a0a0a;
-    }
-    .pacotes h2 {
-      text-align: center;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      color: #fff;
-    }
-    .pacote {
-      max-width: 350px;
-      background-color: #121212;
-      border-radius: 1rem;
-      margin: 20px auto;
-      padding: 20px;
-      border: 2px solid #00ff00;
-      transition: all 0.3s;
-    }
-    .pacote:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 15px #00ff00;
-    }
-    .pacote img {
-      width: 60%;
-      margin: 10px auto;
-      display: block;
-    }
-    .pacote h3 {
-      text-align: center;
-      margin-bottom: 15px;
-      font-family: 'Bebas Neue', cursive;
-    }
-    .preco {
-      text-align: center;
-      margin: 15px 0;
-    }
-    .preco h3 {
-      text-decoration: line-through;
-      color: red;
-      font-size: 1.4rem;
-    }
-    .preco h4 {
-      color: #00ff00;
-      font-size: 2rem;
-      margin-top: 10px;
-    }
-    /* Botão de compra */
-    .btn-comprar {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 12px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border-radius: 30px;
-      background-color: #00e676;
-      color: #000;
-      border: none;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .btn-comprar:hover {
-      background-color: #00c853;
-      transform: scale(1.05);
-    }
+        /* ===== TIPOGRAFIA PROFISSIONAL ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bebas Neue', cursive;
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--text-primary);
+            text-rendering: optimizeLegibility;
+            word-wrap: break-word;
+        }
 
-    /* Depoimentos */
-    .depoimentos {
-      padding: 50px 20px;
-      background-color: #0a0a0a;
-    }
-    .depoimentos h2 {
-      text-align: center;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      color: #ff4d4d;
-    }
-    .carousel {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .carousel-item {
-      display: flex;
-      justify-content: center;
-    }
-    .depoimento-card {
-      background-color: #121212;
-      border-radius: 1rem;
-      padding: 20px;
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-    }
-    .depoimento-card img {
-      width: 80px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-    .stars {
-      color: #00ff00;
-    }
+        .display-1 { font-size: clamp(3rem, 8vw, 6rem); }
+        .display-2 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+        .display-3 { font-size: clamp(2rem, 5vw, 3.5rem); }
 
-    /* FAQ */
-    #faq {
-      padding: 50px 20px;
-      border-radius: 16px;
-      background-color: #121212;
-      margin: 50px 0;
-    }
-    #faq h2 {
-      text-align: center;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      color: #00ff00;
-      text-shadow: 0 0 6px #00ff00;
-    }
-    .accordion-item {
-      background-color: #1a1a1a;
-      border: 1px solid #00ff00;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .accordion-button {
-      background-color: #1a1a1a;
-      color: #fff;
-      font-weight: bold;
-    }
-    .accordion-button:hover,
-    .accordion-button.collapsed {
-      background-color: #00cc00;
-      color: #000;
-    }
-    .accordion-body {
-      background-color: #121212;
-      padding: 15px;
-      font-size: 0.95rem;
-    }
+        p, span, div, li, a {
+            color: var(--text-primary);
+            font-weight: 400;
+            word-wrap: break-word;
+        }
 
-    /* Rodapé */
-    footer {
-      background-color: #222;
-      color: #ccc;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-    /* Notificações dinâmica */
-    #notificacoes {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 9999;
-    }
-    .notificacao {
-      background-color: #0b8200;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 8px;
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      font-size: 0.9rem;
-      box-shadow: 0 0 10px rgba(0,255,118,0.7);
-      opacity: 0;
-      animation: aparecer 0.5s forwards, desaparecer 0.5s forwards 4.5s;
-    }
-    @keyframes aparecer {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes desaparecer {
-      from { opacity: 1; transform: translateY(0); }
-      to { opacity: 0; transform: translateY(20px); }
-    }
-  </style>
+        /* ===== EFEITOS NEÓN PREMIUM ===== */
+        .neon-primary {
+            color: var(--accent-primary) !important;
+            text-shadow: 
+                0 0 5px var(--accent-primary),
+                0 0 10px var(--accent-primary),
+                0 0 20px var(--accent-primary),
+                0 0 40px var(--accent-primary);
+            animation: neonPulse 3s ease-in-out infinite alternate;
+        }
+
+        .neon-danger {
+            color: var(--accent-danger) !important;
+            text-shadow: 
+                0 0 5px var(--accent-danger),
+                0 0 10px var(--accent-danger),
+                0 0 20px var(--accent-danger);
+            animation: neonDangerPulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes neonPulse {
+            from { 
+                text-shadow: 
+                    0 0 5px var(--accent-primary),
+                    0 0 10px var(--accent-primary),
+                    0 0 20px var(--accent-primary);
+            }
+            to { 
+                text-shadow: 
+                    0 0 8px var(--accent-primary),
+                    0 0 15px var(--accent-primary),
+                    0 0 25px var(--accent-primary),
+                    0 0 35px var(--accent-primary);
+            }
+        }
+
+        @keyframes neonDangerPulse {
+            from { 
+                text-shadow: 
+                    0 0 5px var(--accent-danger),
+                    0 0 10px var(--accent-danger);
+            }
+            to { 
+                text-shadow: 
+                    0 0 8px var(--accent-danger),
+                    0 0 15px var(--accent-danger),
+                    0 0 25px var(--accent-danger);
+            }
+        }
+
+      .discount-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(to right, #22c55e, #4ade80, #22c55e);
+    color: white;
+    text-align: center;
+    padding: 8px 4px;
+    font-family: 'Bebas Neue', cursive;  /* ← ADICIONE ESTA LINHA */
+    font-size: 16px;  /* Aumentei um pouco pra combinar com a fonte */
+    font-weight: 400;
+    letter-spacing: 2px;  /* Espaçamento para ficar mais impactante */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+     
+        .discount-banner .highlight {
+            color: #fbbf24;
+        }
+
+        /* ===== HERO SECTION PROFISSIONAL ===== */
+        .hero-premium {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 80px 0;
+            background: var(--gradient-dark);
+            overflow: hidden;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .hero-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at top center, rgba(0, 255, 65, 0.1) 0%, transparent 70%),
+                radial-gradient(circle at bottom left, rgba(0, 230, 118, 0.08) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .logo-premium {
+            max-width: 120px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 20px rgba(0, 255, 65, 0.5));
+            animation: logoFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            word-wrap: break-word;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            word-wrap: break-word;
+        }
+
+        .users-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 255, 65, 0.1);
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 2px solid var(--accent-primary);
+            margin: 20px 0;
+            animation: counterPulse 2s ease-in-out infinite;
+            max-width: 100%;
+        }
+
+        @keyframes counterPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ===== VÍDEO PREMIUM ===== */
+        .video-container {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 
+                0 0 30px rgba(0, 255, 65, 0.3),
+                var(--shadow-secondary);
+            margin: 40px 0;
+            transform: perspective(1000px) rotateX(2deg);
+            transition: var(--transition-smooth);
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .video-container:hover {
+            transform: perspective(1000px) rotateX(0deg) scale(1.02);
+            box-shadow: 
+                0 0 50px rgba(0, 255, 65, 0.5),
+                0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 255, 65, 0.1), transparent, rgba(0, 255, 65, 0.1));
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* ===== BOTÃO CTA PREMIUM ===== */
+        .cta-premium {
+            position: relative;
+            display: inline-block;
+            padding: 22px 45px;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #000 !important;
+            background: var(--gradient-primary);
+            background-size: 200% 200%;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            box-shadow: 
+                0 0 20px rgba(0, 255, 65, 0.4),
+                0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: ctaGlow 3s ease-in-out infinite;
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+
+        .cta-premium:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 0 40px rgba(0, 255, 65, 0.6),
+                0 20px 50px rgba(0, 0, 0, 0.4);
+            color: #000 !important;
+            background-position: 100% 0;
+        }
+
+        .cta-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s;
+        }
+
+        .cta-premium:hover::before {
+            left: 100%;
+        }
+
+        @keyframes ctaGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 20px rgba(0, 255, 65, 0.4),
+                    0 10px 30px rgba(0, 0, 0, 0.3);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 30px rgba(0, 255, 65, 0.6),
+                    0 15px 40px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        /* ===== CARDS PREMIUM ===== */
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            height: 100%;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.6s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-primary);
+            border-color: var(--accent-primary);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: #000;
+            box-shadow: 0 10px 30px rgba(0, 255, 65, 0.3);
+        }
+
+        /* ===== CAROUSEL FEEDBACKS - MANUAL ===== */
+        .star-green {
+            color: var(--accent-primary) !important;
+            text-shadow: 0 0 10px var(--accent-primary);
+        }
+
+        /* ===== PROVA SOCIAL PREMIUM ===== */
+        .social-proof {
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            margin: 40px 0;
+            color: #000 !important;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .social-proof * {
+            color: #000 !important;
+        }
+
+        .social-proof::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: socialProofShine 4s infinite;
+        }
+
+        @keyframes socialProofShine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* ===== PACOTES PREMIUM ===== */
+        .package-card {
+            background: var(--card-bg);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .package-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-primary);
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.6s ease;
+        }
+
+        .package-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .package-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            border: 3px solid var(--accent-primary);
+            box-shadow: 0 10px 30px rgba(0, 255, 65, 0.3);
+        }
+
+        .package-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            word-wrap: break-word;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            width: 100%;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+            word-wrap: break-word;
+            width: 100%;
+        }
+
+        .features-list li:hover {
+            padding-left: 10px;
+            color: var(--accent-primary);
+        }
+
+        .features-list i {
+            font-size: 1.1rem;
+            width: 20px;
+            flex-shrink: 0;
+        }
+
+        .price-section {
+            text-align: center;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .old-price {
+            font-size: 1.8rem;
+            color: var(--accent-danger);
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+
+        .current-price {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+        }
+
+        /* ===== GARANTIA PREMIUM ===== */
+        .guarantee-section {
+            background: linear-gradient(135deg, #1a4d1a, #2d5a2d);
+            border: 3px solid var(--accent-secondary);
+            border-radius: var(--border-radius);
+            padding: 50px 30px;
+            margin: 60px 0;
+            position: relative;
+            text-align: center;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .guarantee-section::before {
+            content: '🛡️';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-secondary);
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 230, 118, 0.4);
+        }
+
+        /* ===== CONTADOR DE VENDAS MÓVEL ===== */
+        .sales-counter-mobile {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent-danger), #ff6b87);
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 
+                0 10px 30px rgba(255, 71, 87, 0.4),
+                0 0 20px rgba(255, 71, 87, 0.3);
+            z-index: 9999;
+            cursor: move;
+            user-select: none;
+            transition: var(--transition-smooth);
+            animation: counterBounce 3s infinite;
+            max-width: 180px;
+            text-align: center;
+        }
+
+        .sales-counter-mobile:hover {
+            transform: scale(1.05);
+            box-shadow: 
+                0 15px 40px rgba(255, 71, 87, 0.6),
+                0 0 30px rgba(255, 71, 87, 0.5);
+        }
+
+        .sales-counter-mobile.dragging {
+            animation: none;
+            transform: scale(1.1);
+            box-shadow: 
+                0 20px 50px rgba(255, 71, 87, 0.8),
+                0 0 40px rgba(255, 71, 87, 0.7);
+            z-index: 10001;
+        }
+
+        @keyframes counterBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* ===== NOTIFICAÇÕES ===== */
+        .notification-container {
+            position: fixed;
+            bottom: 15px;
+            left: 15px;
+            z-index: 10000;
+            max-width: calc(100vw - 30px);
+        }
+
+        .purchase-notification {
+            background: linear-gradient(135deg, var(--card-bg), #2d2d2d);
+            border: 2px solid var(--accent-primary);
+            border-radius: 15px;
+            padding: 12px 15px;
+            max-width: 300px;
+            box-shadow: 
+                0 15px 30px rgba(0, 255, 65, 0.15),
+                0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateX(-120%);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            backdrop-filter: blur(10px);
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden;
+            font-size: 13px;
+        }
+
+        .purchase-notification::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+            animation: notificationShine 3s infinite;
+        }
+
+        @keyframes notificationShine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .purchase-notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .notification-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #000;
+            animation: iconPulse 2s infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .notification-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .notification-title {
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--accent-primary);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .notification-product {
+            font-weight: 600;
+            font-size: 11px;
+            color: var(--text-primary);
+            margin: 2px 0;
+            line-height: 1.2;
+        }
+
+        .notification-location {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        /* ===== FAQ PREMIUM ===== */
+        .faq-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 50px 30px;
+            margin: 60px 0;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .accordion-item {
+            background: transparent !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 15px !important;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            background: var(--card-bg) !important;
+            color: var(--text-primary) !important;
+            border: none !important;
+            padding: 20px 25px !important;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            word-wrap: break-word;
+        }
+
+        .accordion-button:hover {
+            background: rgba(0, 255, 65, 0.1) !important;
+        }
+
+        .accordion-body {
+            background: var(--secondary-bg) !important;
+            color: var(--text-secondary) !important;
+            padding: 25px !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            word-wrap: break-word;
+        }
+
+        /* ===== RESPONSIVIDADE MOBILE ===== */
+        @media (max-width: 768px) {
+            .sales-counter-mobile {
+                top: 50px;
+                right: 10px;
+                font-size: 12px;
+                padding: 12px 16px;
+                max-width: 150px;
+            }
+            
+            .notification-container {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+            
+            .purchase-notification {
+                max-width: calc(100vw - 20px);
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+            
+            .notification-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 12px;
+            }
+            
+            .cta-premium {
+                font-size: 1.2rem;
+                padding: 18px 35px;
+                letter-spacing: 1px;
+            }
+            
+            .hero-premium {
+                min-height: 90vh;
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sales-counter-mobile {
+                font-size: 11px;
+                padding: 10px 14px;
+                max-width: 130px;
+            }
+            
+            .purchase-notification {
+                font-size: 11px;
+                padding: 8px 10px;
+            }
+            
+            .notification-icon {
+                width: 28px;
+                height: 28px;
+                font-size: 11px;
+            }
+            
+            .cta-premium {
+                font-size: 1.1rem;
+                padding: 16px 30px;
+            }
+            
+            .package-title {
+                font-size: 2rem;
+            }
+            
+            .current-price {
+                font-size: 2.5rem;
+            }
+            
+            .old-price {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ===== ANIMAÇÕES DE ENTRADA ===== */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            animation: fadeInRight 0.8s ease forwards;
+        }
+
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ===== MICRO-INTERAÇÕES ===== */
+        .hover-lift {
+            transition: var(--transition-smooth);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+
+        .hover-glow {
+            transition: var(--transition-smooth);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+        }
+
+        /* ===== OTIMIZAÇÕES DE PERFORMANCE ===== */
+        .will-change-transform {
+            will-change: transform;
+        }
+
+        .gpu-accelerated {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+    </style>
 </head>
+
 <body>
-
-  <!-- Banner com cupom -->
-  <div id="banner-cupom">
-    <strong>USE CUPOM [XITEI] E GANHE DESCONTO!</strong>
-  </div>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <img src="img site/logo2.jpg" alt="Logo do Produto" />
-      <h1>
-        <span class="white-bold">MELHOR</span> <span class="neon-red">PAINEL XIT!</span> <br>
-        <span class="white-bold"> CONSIGAR DAR</span> <br>
-        <span class="neon-vermelho">FULL VERMELHO!</span>
-      </h1>
-      <p class="mt-3"><strong id="contador-pessoas" class="neon-vermelho">138</strong> usuários ativos agora!</p>
-      <div class="ratio ratio-16x9 mt-4 video-neon">
-        <iframe src="https://www.youtube.com/embed/SD8KYZ8MRpQ?si=-qPLQXDLwGlh2HY0" title="YouTube video player" allowfullscreen></iframe>
-      </div>
-      <a href="#beneficios" class="btn btn-pulse-green fw-bold mt-4 btn-comprar">COMPRAR XIT AGORA!</a>
-    </div>
-  </section>
-
-  <!-- Benefícios -->
-  <section id="beneficios" class="beneficios">
-    <h2>Por que escolher o Painel Xit?</h2>
-    <div class="cards-row">
-      <!-- Card 1 -->
-      <div class="card-beneficio">
-        <img src="img site/trofeu.png" alt="Vença Todas as Partidas" />
-        <h5>Vença Todas as Partidas</h5>
-        <p>Tenha acesso ao melhor Painel Xit do cenário do Free Fire na palma da sua mão. Full vermelho, sensi que gruda so Capa!, e segurança 100% anti-ban, 
-          anti-blacklist.</p>
-      </div>
-      <!-- Card 2 -->
-      <div class="card-beneficio">
-        <img src="img site/controle.png" alt="Jogabilidade Profissional" />
-        <h5>Jogabilidade Profissional</h5>
-        <p>Transforme sua jogabilidade com comandos precisos e respostas rápidas. Aproveite o melhor Painel agora!</p>
-      </div>
-      <!-- Card 3 -->
-      <div class="card-beneficio">
-        <img src="img site/velocimetro.png" alt="Desempenho Turbinado" />
-        <h5>Desempenho Turbinado!</h5>
-        <p>Resposta rápida e performance máxima em Android e iOS. Domine o jogo com facilidade sem ser desconberto.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pacotes VIP -->
-  <section class="pacotes" id="pacotes">
-    <h2>Escolha seu pacote VIP</h2>
-
-    <!-- Pacote iOS -->
-    <div class="pacote">
-      <img src="img site/iphone.png" alt="Painel CLT VIP" />
-      <h3>XIT iPhone/iOS</h3>
-      <p>Melhor XIT para seu iPhone, 100% full capa, anti-ban, com funções avançadas.</p>
-         </p>
-        <hr style="border-color: #00ff00;">
-         <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Função HS pescoço + Bypass</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira automática 100% capa</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Aimbot Cabeça</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> UMP AUTOMÁTICA</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Disfarce anti-ban</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full capa</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira que grudar</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> VPN-DNS</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN!</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BLACKLIST!</li>
-        </ul>
-      <div class="preco">
-        <h3>De R$ 179,97</h3>
-        <h4>Por Apenas R$37,90</h4>
-      </div>
-      <a href="https://go.pepperpay.com.br/1xm07" class="btn btn-pulse-green btn-comprar">COMPRAR AGORA!</a>
+    <!-- Facebook Pixel noscript -->
+    <noscript>
+        <img height="1" width="1" style="display:none"
+          src="https://www.facebook.com/tr?id=3525977697696631&ev=PageView&noscript=1" />
+    </noscript>
+    
+    <!-- Banner de Desconto com Data Real -->
+    <div class="discount-banner">
+        <div class="container">
+            <span>🔥 OFERTA EXCLUSIVA: <span class="highlight">FIM DE ANO!</span> </span> <span id="currentDate"></span>
+        </div>
     </div>
 
-    <!-- Pacote Android -->
-    <div class="pacote">
-      <img src="img site/android.png" alt="Painel Android" />
-      <h3>XIT Android</h3>
-      <p>Melhor XIT para Android, full capa, anti-ban, funções exclusivas para seu dispositivo.</p>
-       </p>
-        <hr style="border-color: #00ff00;">
-         <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Função HS pescoço + Bypass</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira automática 100% capa</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Aimbot Cabeça</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> UMP AUTOMÁTICA</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Disfarce anti-ban</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full capa</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira que grudar</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> VPN-DNS</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN!</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BLACKLIST!</li>
-        </ul>
-      <div class="preco">
-        <h3>De R$ 147,97</h3>
-        <h4>Por Apenas R$29,90</h4>
-      </div>
-      <a href="https://go.pepperpay.com.br/6ztdj" class="btn btn-pulse-green btn-comprar">COMPRAR AGORA!</a>
+    <!-- Contador de Vendas Móvel e Arrastável -->
+    <div class="sales-counter-mobile" id="salesCounterMobile">
+        <i class="fas fa-fire"></i> <span id="salesCount">252</span> vendas hoje!
     </div>
 
-    <!-- Pacote VIP completo -->
-    <div class="pacote" id="planos">
-      <img src="img site/ambos.png" alt="Painel CLT VIP" />
-      <h3>PACOTE VIP 2 EM 1 AVANÇADO</h3>
-      <p>Painel VIP 2 em 1 com ferramentas secretas, com segurança e suporte 24/7.</p>
-        <hr style="border-color: #00ff00;">
-        <ul class="lista-beneficios mb-4" style="list-style: none; padding-left: 0; text-align: left;">
-            <li><i class="bi bi-check-circle-fill star-green"></i> Painel VIP exclusivo Android/iPhone</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Rastreamento de cabeça</li><li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Mira Regular pra Cabeça Pescoço peito</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Mira automática Full capa</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Rastreamento com mira aberta</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> 2x Automática</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> UMP automática</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> 2x Aimbot</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Painel 100% disfarçado</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Disfarce 100% Anti ban</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Aim Regedit</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Aim Lock</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> HeadShot</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> No Recoil (não espalha tiro)</li>
-            <li> <i class="bi bi-check-circle-fill star-green"></i> Sensi VIP Full Capa</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Mira que Grudar</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Instalação fácil e rápida</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> 100% ANTI-BAN e ANTI-BLACK LIST</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> BÔNUS: Acesso todas ferramentas secretas</li>
-            <li><i class="bi bi-check-circle-fill star-green"></i> Suporte 24/7 pessoal no WhatsApp</li>
-        </ul>
-      <div class="preco">
-        <h3>De R$ 249,97</h3>
-        <h4>Por Apenas R$49,90</h4>
-      </div>
-      <a href="https://go.pepperpay.com.br/st7xa" class="btn btn-pulse-green btn-comprar">COMPRAR AGORA!</a>
-    </div>
-  </section>
- </div>
+    <!-- Container para Notificações Premium -->
+    <div class="notification-container" id="notificationContainer"></div>
 
+    <!-- Hero Section Premium -->
+    <section class="hero-premium">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center hero-content fade-in-up">
+                    <img src="imgs/logo.png" alt="New Sensi Logo" class="logo-premium" />
+                    
+                    <h1 class="hero-title">
+                        O <span class="neon-primary">PAINEL XIT</span> Nº1 DO BRASIL<br>
+                        <span class="neon-danger">FULL VERMELHO</span> GARANTIDO!
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        • PAINEL com + <strong class="neon-primary">10 mil Players</strong><br>
+                        • Sua mira vai dar só <span class="neon-danger">Full Vermelho</span>!<br>
+                        • Painel 100% Anti-Ban Anti-Blacklist!<br> 
+                        • Suporte Exclusivo 24Horas!<br> 
+                    </p>
+                    
+                    <div class="users-counter">
+                        <i class="fas fa-users"></i>
+                        <strong id="userCounter" class="neon-primary">998</strong> usuários ativos agora!
+                    </div>
+                    
+                    <div class="video-container mt-4">
+                        <div class="ratio ratio-16x9">
+                            <script src="https://fast.wistia.com/player.js" async></script>
+                <script src="https://fast.wistia.com/embed/m8pcxycab8.js" async type="module"></script>
+                <style>
+                    wistia-player[media-id='m8pcxycab8']:not(:defined) { 
+                        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/m8pcxycab8/swatch'); 
+                        display: block; 
+                        filter: blur(5px); 
+                        padding-top: 56.25%; 
+                          }
+                </style>
+                             <wistia-player media-id="m8pcxycab8" aspect="1.7777777777777777"></wistia-player>
+            </div>
+                        </div>
+                    
+                    <a href="#pacotes" class="cta-premium will-change-transform">
+                         QUERO MEU PAINEL XIT!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section Premium -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 fade-in-left">
+                    <div class="feature-card hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="text-center mb-3">Mira 2x Automática</h3>
+                        <p class="text-center">
+                            Mira 100% automática com precisão cirúrgica. Cada tiro é CAPA garantida. 
+                           2x Automática ela tem 100% de precisão de mira sem erra um tiro! Transforme-se no player mais temido do Free Fire
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="feature-card hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <h3 class="text-center mb-3"> Rastreamento pra cabeça</h3>
+                        <p class="text-center">
+                            Com Sistema de rastreamento avançado que gruda na cabeça dos inimigos. 
+                            2x automática que gruda Full, mesmo à longa distância.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 fade-in-right" style="animation-delay: 0.4s;">
+                    <div class="feature-card hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="text-center mb-3"> Sobre nosso Painel XIT</h3>
+                        <p class="text-center">
+                           Nosso Painel quanta com várias fuções no Sistema, como ESP, Aimbot, aimkill, e várias outras opções Avançadas. Jogue com segurança total, 
+                            sem risco de banimento ou blacklist. Garantia de proteção.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+  <!-- Soluções Section -->
+    <section class="section" style="background: linear-gradient(to bottom, #111827, #000);">
+        <div class="container">
+            <h2 class="section-title">
+                A <span style="color: #dc2626;">Solução</span> Perfeita
+            </h2>
+            <p class="section-subtitle">Painel XIT resolve todos esses problemas acima de uma vez</p>
+
+            <!-- Vídeo do Painel em Ação -->
+            <div style="margin-bottom: 48px;">
+                <div class="video-container" style="max-width: 896px; margin: 0 auto;">
+                    <script src="https://fast.wistia.com/player.js" async></script>
+                    <script src="https://fast.wistia.com/embed/wkc2wjaez1.js" async type="module"></script>
+                    <style>
+                        wistia-player[media-id='wkc2wjaez1']:not(:defined) { 
+                            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/wkc2wjaez1/swatch'); 
+                            display: block; 
+                            filter: blur(5px); 
+                            padding-top:55.0%; 
+                        }
+                    </style>
+                    <wistia-player media-id="wkc2wjaez1" aspect="1.8181818181818181"></wistia-player>
+                   </div>
+                <p style="text-align: center; color: #9ca3af; margin-top: 16px; font-size: 18px;">👆 Veja o Painel XIT em ação</p>
+                </div>
+                
+                <div>
+
+    <!-- Seção de Feedbacks - CAROUSEL MANUAL -->
+    <section id="beneficios" class="beneficios">
+        
     <div class="text-center p-3 mt-2">
-       <h1 class="display-2 text-light"> 
-            <span class="neon-red">
-                FeedBacks clientes
-            </span>
-        </h1>
-    </div>
-
-    <div id="carouselDepoimentos" class="carousel slide container py-5" data-bs-ride="carousel">
-        <div class="carousel-inner">
-
-            <div class="carousel-item active">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (1).webp" alt="Depoimento 1" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
+    <h1 class="display-2" style="color: #ffffff;"> 
+        Veja abaixo alguns
+        <span class="neon-red">
+            <span class="neon-primary">FeedBacks</span> de clientes
+        </span>
+    </h1>
+</div>
+        
+<div id="carouselDepoimentos" class="carousel slide container py-5">
+    <div class="carousel-inner">
+        <!-- Primeiro depoimento -->
+        <div class="carousel-item active">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/pvsocial (6).jpg" alt="Depoimento 1" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
                     </div>
                 </div>
             </div>
-
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (2).webp" alt="Depoimento 2" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (3).webp" alt="Depoimento 3" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (4).webp" alt="Depoimento 3" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (5).webp" alt="Depoimento 3" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <div class="card text-white text-center p-4 rounded-4"
-                        style="background-color: #121212; width: 90%; max-width: 400px;">
-                        <img src="img site/pvsocial (6).webp" alt="Depoimento 3" class="img-fluid">
-                        <div class="mb-2 mt-2">
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                            <i class="bi bi-star-fill star-green"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
-        <!-- Controles -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="next">
-            <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-            <span class="visually-hidden">Próximo</span>
-        </button>
-       </div>
-  <!-- Garantia -->
-  <section class="py-5 bg-dark text-center text-white">
+        <!-- Segundo depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/pvsocial (2).jpg" alt="Depoimento 2" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terceiro depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/prova social 03.PNG" alt="Depoimento 3" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quarto depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/pvsocial (4).jpg" alt="Depoimento 4" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quinto depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/pvsocial (5).jpg" alt="Depoimento 5" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sexto depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/prova social 04.PNG" alt="Depoimento 6" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sétimo depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/prova social 01.jpg" alt="Depoimento 7" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Oitavo depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/prova social 02.JPG" alt="Depoimento 8" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nono depoimento -->
+        <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+                <div class="card text-white text-center p-4 rounded-4"
+                    style="background-color: #121212; width: 90%; max-width: 400px;">
+                    <img src="imgs/prova social 05.jpg" alt="Depoimento 9" class="img-fluid">
+                    <div class="mb-2 mt-2">
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                        <i class="bi bi-star-fill star-green"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles MANUAIS - SEM AUTOPLAY -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+    </button>
+</div>
+</section>
+
+     <!-- Prova Social Premium -->
     <div class="container">
-      <img src="img site/garantia.webp" alt="Garantia" class="img-fluid mb-3" style="max-width: 200px;" />
-      <h4 class="mb-3">Garantia de Satisfação</h4>
-      <p>Você tem 7 dias de garantia para testar tudo sem compromisso. Se não ficar satisfeito, seu dinheiro de volta!</p>
+        <div class="social-proof fade-in-up">
+            <h3 class="display-5 mb-3" style="font-size: clamp(1.5rem, 4vw, 2.2rem);">
+               🔱  MAIS DE 10.000 PLAYERS JÁ ESCOLHERAM O PAINEL XIT! 🔱
+            </h3>
+            <div class="row text-center">
+                <div class="col-md-4 mb-2">
+                    <h4 class="display-6" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">12.847</h4>
+                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Clientes satisfeitos</p>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <h4 class="display-6" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">99.7%</h4>
+                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Taxa de aprovação</p>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <h4 class="display-6" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">24/7</h4>
+                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Suporte especializado</p>
+                </div>
+            </div>
+            <p class="mt-3" style="font-size: clamp(1rem, 2.5vw, 1.3rem);">
+                <strong>"Se você não está usando o Painel XIT, seus adversários estão levando vantagem sobre você!"</strong>
+            </p>
+        </div>
     </div>
-  </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="py-5">
+    <!-- Pacotes Premium -->
+    <section id="pacotes" class="py-5">
+        <div class="container">
+            <h2 class="display-2 text-center mb-5 fade-in-up">
+                Escolha Seu <span class="neon-primary">Painel XIT</span> ABAIXO
+            </h2>
+            
+            <div class="row g-4 justify-content-center">
+                <!-- Painel Android -->
+                <div class="col-lg-4 fade-in-left">
+                    <div class="package-card">
+                        <img src="imgs/android.png" alt="Android" class="package-image">
+                        
+                        <h3 class="package-title text-center"> <span class="neon-primary">ANDROID</span> </h3>
+                        <p class="text-center text-muted mb-4">
+                            O painel mais avançado para Android
+                        </p>
+                        
+                        <ul class="features-list">
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> Painel Mod Menu FFH4X</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> Função HS pescoço + Bypass</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> Mira automática 100% capa</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> 2x Automática</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> Rastreamento de cabeça</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> UMP AUTOMÁTICA</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Aimbot Cabeça</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Aim Regedit</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> 2x Aimbot</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> HeadShot</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Mira que gruda</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Disfarce 100% indetectável</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Com disfarçe pra não leva Ban!</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Instalar sem precisar de PC (opcional)</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Sensi VIP Full capa</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Tutorial de Instalação fácil e rápida</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Acesso do Painel VIP na Hora!</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> 100% Anti-Ban/Anti-BlackList!</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Nosso Whatsapp Oficial Como seu Suporte</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> 7 Dias de Garantia</li>
+                        </ul>
+                        
+                        <div class="price-section">
+                            <div class="old-price">De R$ 147,90</div>
+                            <span style="color: #ffffff;">Por apenas</span>
+                            <div class="current-price">R$ 29,90</div>
+                            <a href="https://go.perfectpay.com.br/PPU38CPTN1D" class="cta-premium w-100">
+                              🛒 COMPRAR COM DESCONTO! 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Painel iPhone -->
+                <div class="col-lg-4 fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="package-card">
+                        <img src="imgs/iphone.png" alt="iPhone" class="package-image">
+                        
+                        <h3 class="package-title text-center"><span class="neon-primary">IPHONE/IOS</span></h3>
+                        <p class="text-center text-muted mb-4">
+                             O painel mais Completo para iPhone/iOS
+                        </p>
+                        
+                        <ul class="features-list">
+                           <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> Painel Mod Menu FFH4X</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> Função HS pescoço + Bypass</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> Mira automática 100% capa</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> 2x Automática</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> Rastreamento de cabeça</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> UMP AUTOMÁTICA</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Aimbot Cabeça</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Aim Regedit</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> 2x Aimbot</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> HeadShot</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Mira que gruda</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Disfarce 100% indetectável</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Com disfarçe pra não leva Ban!</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Instalar sem precisar de PC (opcional)</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Sensi VIP Full capa</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Tutorial de Instalação fácil e rápida</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Acesso do Painel VIP na Hora!</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> 100% Anti-Ban/Anti-BlackList!</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Nosso Whatsapp Oficial Como seu Suporte</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> 7 Dias de garantia</li>
+                        </ul>
+                        
+                        <div class="price-section">
+                            <div class="old-price">De R$ 147,90</div>
+                            <span style="color: #ffffff;">Por apenas</span>
+                            <div class="current-price">R$ 29,90</div>
+                            <a href="https://go.perfectpay.com.br/PPU38CPTMME" class="cta-premium w-100">
+                                🛒 COMPRAR COM DESCONTO! 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Painel CLT VIP -->
+                <div class="col-lg-4 fade-in-right" style="animation-delay: 0.4s;">
+                    <div class="package-card" style="border-color: var(--accent-secondary);">
+                        <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gradient-primary); color: #000; padding: 8px 20px; border-radius: 20px; font-weight: 700; font-size: 0.9rem;">
+                            Mais Popular!
+                        </div>
+                        
+                        <img src="imgs/CLT.jpg" alt="CLT VIP" class="package-image">
+                        
+                        <h3 class="package-title text-center"><span class="neon-primary">PAINEL CLT VIP</span></h3>
+                        <p class="text-center text-muted mb-4">
+                            O Painel definitivo - Android + iPhone
+                        </p>
+                        
+                        <ul class="features-list">
+                            <li><i class="fas fa-crown" style="color: #ffd700;"></i> Painel Mod Menu FFH4X</li>
+                            <li><i class="fas fa-crown" style="color: #ffd700;"></i> Acesso VIP Permanente</li>
+                            <li><i class="fas fa-crown" style="color: #ffd700;"></i> No Recoil (não espalha tiros)</li>
+                            <li><i class="fas fa-crown" style="color: #ffd700;"></i> 2x Xitada + 2x Automática</li>
+                            <li><i class="fas fa-crown" style="color: #ffd700;"></i> Rastreamento de cabeça avançado</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> Função HS pescoço + Bypass</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> UMP automática premium</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> Mira automática Full capa</li>
+                            <li><i class="fas fa-fire" style="color: var(--accent-danger);"></i> Disfarce 100% indetectável</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Aim Regedit</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> 2x Aimbot</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> HeadShot</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Mira que gruda!</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Disfarce 100% indetectável</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Com disfarçe pra não leva Ban!</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Instalar sem precisar de PC (opcional) </li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Sensi VIP Full capa</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Tutorial de Instalação fácil e rápida</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Suporte VIP Exclusivo 24h</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Bônus Atualizações vitalícias</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Atualização Acesso antecipado</li>             
+                            <li><i class="fas fa-check" style="color: var(--accent-primary);"></i> Garantia Total de 30 Dias!</li>
+                        </ul>
+                        
+                        <div class="price-section">
+                            <div class="old-price">De R$ 214,97</div>
+                            <span style="color: #ffffff;">Por apenas</span>
+                            <div class="current-price">R$ 49,90</div>
+                            <a href="https://go.perfectpay.com.br/PPU38CPQM3H" class="cta-premium w-100">
+                                👑 COMPRAR VIP AGORA!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Garantia Premium -->
     <div class="container">
-      <h2>Perguntas Frequentes (FAQ)</h2>
-      <div class="accordion" id="faqAccordion">
-        <!-- Pergunta 1 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="faq1">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-              PARA QUEM É ESSE PRODUTO?
-            </button>
-          </h2>
-          <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Público-alvo: jogadores de Free Fire que querem melhorar suas sensi e que te uma mira que gruda Full vermelho sempre! com segurança e 100% Anti-ban.
+        <div class="guarantee-section fade-in-up">
+            <h2 class="display-4 mb-3" style="margin-top: 30px; font-size: clamp(1.8rem, 4vw, 2.5rem);">
+                🛡️ GARANTIA TOTAL DE SATISFAÇÃO! 🛡️
+            </h2>
+            <p class="mb-3" style="font-size: clamp(1.1rem, 2.5vw, 1.4rem);">
+                <strong>Compre com total segurança e confiança!</strong>
+            </p>
+            <div class="row text-center">
+                <div class="col-md-6 mb-3">
+                    <h5 class="neon-primary" style="font-size: clamp(1rem, 2vw, 1.2rem);">✅ 7 DIAS DE GARANTIA</h5>
+                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Não funcionou? Devolvemos 100% do seu dinheiro!</p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5 class="neon-primary" style="font-size: clamp(1rem, 2vw, 1.2rem);">✅ SUPORTE 24H</h5>
+                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Qualquer problema, nossa equipe resolve na hora!</p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5 class="neon-primary" style="font-size: clamp(1rem, 2vw, 1.2rem);">✅ INSTALAÇÃO GRÁTIS</h5>
+                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Não consegue instalar? Fazemos para você!</p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5 class="neon-primary" style="font-size: clamp(1rem, 2vw, 1.2rem);">✅ ANTI-BAN GARANTIDO</h5>
+                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Levou ban? Reembolsamos tudo!</p>
+                </div>
             </div>
-          </div>
+            <p class="mt-3" style="font-size: clamp(1rem, 2.5vw, 1.2rem);">
+                <strong>"Sua satisfação é nossa prioridade. Compre sem medo!"</strong>
+            </p>
         </div>
-        <!-- Pergunta 3 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="faq3">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-              COMO RECEBO MEU PRODUTO?
-            </button>
-          </h2>
-          <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Após confirmação de pagamento, você receberá por e-mail rápido na hora! um link com acesso ao produto. Pagou, recebeu! simples e fácil, sem enrolaçâo.
-            </div>
-          </div>
-        </div>
-        <!-- Pergunta 4 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="faq4">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-              COMO ACESSAR O PRODUTO?
-            </button>
-          </h2>
-          <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Você acessa pelo seu e-mail ou pelo o link do seu E-mail, fazendo login e indo em  minutos ao produto.
-            </div>
-          </div>
-        </div>
-        <!-- Pergunta 5 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="faq5">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-              COMO INSTALAR E FÁCIL ?
-            </button>
-          </h2>
-          <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-               <span class="white-bold">A instalação é rápida e fácil: em poucos minutos, com instruções passo a passo video tutorial completo e suporte no WhatsApp. ganhe Suporte 24/7!</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2023-2025 New Sensi. Todos os direitos reservados.</p>
-      <p>Instagram Oficial: <a href="https://instagram.com/new.sensi.ff" target="_blank" style="color:#00e676;">@new.sensi.ff</a></p>
-      <p>Desenvolvido por <strong>New sensi</strong></p>
-    </div>
-  </footer>
+    <!-- FAQ Premium -->
+    <section class="py-5" id="faq">
+        <div class="container">
+            <div class="faq-section fade-in-up">
+                <h2 class="display-3 text-center mb-5">
+                    Perguntas <span class="neon-primary">Frequentes</span>
+                </h2>
+                
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                COMO FUNCIONA O PRAZO DE GARANTIA?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Você tem até <strong>7 dias completos</strong> para testar nosso painel. 
+                                Se não ficar 100% satisfeito, devolvemos seu dinheiro integral, 
+                                sem perguntas e sem burocracia.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                COMO RECEBO O PAINEL APÓS A COMPRA?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <strong>Entrega instantânea!</strong> Assim que o pagamento for aprovado, 
+                                você recebe automaticamente todos os arquivos e instruções no seu email. 
+                                Pagou, já pode começar a dominar!
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                A INSTALAÇÃO É COMPLICADA?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <strong>Super simples!</strong> O processo leva menos de 5 minutos. 
+                                Incluímos tutorial em vídeo passo a passo e nossa equipe de suporte 
+                                está disponível 24h para ajudar. Se não conseguir, instalamos para você!
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                É REALMENTE ANTI-BAN?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <strong>100% Anti-ban garantido!</strong> Nosso sistema é indetectável 
+                                e já está sendo usado por mais de 10.000 players sem problemas. 
+                                Caso aconteça algo impossível, reembolsamos tudo!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Script de notificações e contagem -->
-  <div id="notificacoes"></div>
+    <!-- Footer Premium -->
+    <footer class="py-5" style="background: var(--secondary-bg); border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="container text-center">
+            <p class="mb-2" style="font-size: clamp(0.9rem, 2vw, 1rem);">&copy; 2025 New Sensi. Todos os direitos reservados.</p>
+            <p class="mb-2" style="font-size: clamp(0.85rem, 1.8vw, 0.95rem);">
+                Instagram: 
+                <a href="https://instagram.com/new.sensi.ff" target="_blank" class="neon-primary">@new.sensi.ff</a>
+            </p>
+            <p class="text-muted" style="font-size: clamp(0.8rem, 1.5vw, 0.9rem);">Desenvolvido com ❤️ pela equipe <strong class="neon-primary">New Sensi</strong></p>
+        </div>
+    </footer>
 
-  <script>
-    // Contador de usuários
-    let contador = 138;
-    const elementoContador = document.getElementById('contador-pessoas');
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s) {
+            if(f.fbq) return; n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
+            n.queue=[]; t=b.createElement(e); t.async=!0;
+            t.src=v; s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3525977697696631');
+        fbq('track', 'PageView');
+    </script>
 
-    function atualizarContador() {
-      const aumento = Math.floor(Math.random() * 5) + 1;
-      contador += aumento;
-      elementoContador.textContent = contador;
-      setTimeout(atualizarContador, Math.floor(Math.random() * 3000) + 2000);
-    }
-    atualizarContador();
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-    // Notificações dinâmicas
-    const nomes = ["João", "Isabelle", "Maria", "Ana", "Matheus", "Juliana", "Rafaela", "Pedro", "Carlos", "Lucas"];
-    const acoes = [
-      "Aproveitou a Promoção",
-      "Comprou Painel Xit",
-      "Acabou de adquirir o painel CLT",
-      "Realizou uma compra",
-      "Confirmou o pagamento"
-    ];
+    <!-- Sistema Premium de Interações COM DATA REAL -->
+    <script>
+        class PremiumInteractionSystem {
+            constructor() {
+                this.salesCounter = document.getElementById('salesCount');
+                this.userCounter = document.getElementById('userCounter');
+                this.notificationContainer = document.getElementById('notificationContainer');
+                this.dateElement = document.getElementById('currentDate');
+                
+                this.currentSales = 252;
+                this.currentUsers = 998;
+                
+                this.init();
+            }
+            
+            init() {
+                this.updateDate();
+                this.startNotifications();
+                this.startCounters();
+                this.initDraggable();
+                this.initAnimations();
+                this.initInteractions();
+            }
+            
+            // Atualizar data real
+            updateDate() {
+                const now = new Date();
+                const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+                const dateStr = now.toLocaleDateString('pt-BR', options);
+                if (this.dateElement) {
+                    this.dateElement.textContent = `- ${dateStr}`;
+                }
+                
+                // Atualizar a cada minuto
+                setInterval(() => {
+                    const now = new Date();
+                    const dateStr = now.toLocaleDateString('pt-BR', options);
+                    if (this.dateElement) {
+                        this.dateElement.textContent = `- ${dateStr}`;
+                    }
+                }, 60000);
+            }
+            
+            // Sistema de notificações otimizado para mobile
+            showNotification() {
+                const names = [
+                    "João Silva", "Bella", "Maria Santos", "Adriano silva", "Pedro Costa", "Ana", "Vitor", "Fabinho", "Carlos Souza", "Isabelle", "Rafaela", "Kauane", "Natally",
+                    "Juliana Oliveira", "Rafael Alves", "Camila Ferreira", "Lucas Pereira", "Beatriz Rocha", "Rafael", "Matheus", "Juliana", "Fernanda", "Rodrigo", "Davi", "Diego",
+                    "Gabriel Martins", "Larissa Cunha", "Leonardo Freitas", "Thiago Ribeiro", "Camila Rocha", "Adriano", "Natália Gomes", "Diego Nascimento"
+                ];
+                
+                const products = ["☠️ Painel XIT Android", "☠️ Painel XIT iPhone/iOS", "👑 Painel 2 em 1 Android/iPhone!"];
+                const cities = ["São Paulo", "Rio de Janeiro", "Vitória", "Belo Horizonte", "Salvador", "João Pessoa", "Campina Grande", "Campo Grande", "Salvador", "Porto Alegre", "Curitiba", "Maceió",
+                                "Recife", "Natal", "Brasília", "Fortaleza"];
+                
+                const name = names[Math.floor(Math.random() * names.length)];
+                const product = products[Math.floor(Math.random() * products.length)];
+                const city = cities[Math.floor(Math.random() * cities.length)];
+                
+                const notification = document.createElement('div');
+                notification.className = 'purchase-notification';
+                notification.innerHTML = `
+                    <div class="notification-header">
+                        <div class="notification-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="notification-text">
+                            <p class="notification-title">🔥 NOVA COMPRA!</p>
+                            <p class="notification-product"><strong>${product}</strong></p>
+                            <p class="notification-location">${name} • ${city}</p>
+                        </div>
+                    </div>
+                `;
+                
+                this.notificationContainer.appendChild(notification);
+                
+                // Mostrar notificação
+                setTimeout(() => notification.classList.add('show'), 100);
+                
+                // Auto remover após 5 segundos
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.classList.remove('show');
+                        setTimeout(() => notification.remove(), 500);
+                    }
+                }, 5000);
+            }
+            
+            // Sistema de notificações
+            startNotifications() {
+                const showNotification = () => {
+                    this.showNotification();
+                    
+                    // Próxima notificação em 8-15 segundos
+                    const nextDelay = Math.floor(Math.random() * 7000) + 8000;
+                    setTimeout(showNotification, nextDelay);
+                };
+                
+                // Primeira notificação após 3 segundos
+                setTimeout(showNotification, 3000);
+            }
+            
+            // Atualizar contadores
+            updateCounters() {
+                // Atualizar vendas
+                if (this.salesCounter) {
+                    const increase = Math.floor(Math.random() * 3) + 1;
+                    this.currentSales += increase;
+                    this.salesCounter.textContent = this.currentSales;
+                }
+                
+                // Atualizar usuários
+                if (this.userCounter) {
+                    const increase = Math.floor(Math.random() * 8) + 3;
+                    this.currentUsers += increase;
+                    this.userCounter.textContent = this.currentUsers.toLocaleString('pt-BR');
+                }
+            }
+            
+            startCounters() {
+                const updateCounters = () => {
+                    this.updateCounters();
+                    
+                    // Próxima atualização em 15-30 segundos
+                    const nextUpdate = Math.floor(Math.random() * 15000) + 15000;
+                    setTimeout(updateCounters, nextUpdate);
+                };
+                
+                // Primeira atualização após 10 segundos
+                setTimeout(updateCounters, 10000);
+            }
+            
+            // Contador arrastável otimizado para mobile
+            initDraggable() {
+                const counter = document.getElementById('salesCounterMobile');
+                if (!counter) return;
+                
+                let isDragging = false;
+                let currentX, currentY, initialX, initialY;
+                let xOffset = 0, yOffset = 0;
 
-    function mostrarNotificacao() {
-      const nome = nomes[Math.floor(Math.random() * nomes.length)];
-      const acao = acoes[Math.floor(Math.random() * acoes.length)];
-      const mensagem = `${nome} ${acao}`;
+                const dragStart = (e) => {
+                    const clientX = e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
+                    const clientY = e.type === "touchstart" ? e.touches[0].clientY : e.clientY;
+                    
+                    initialX = clientX - xOffset;
+                    initialY = clientY - yOffset;
 
-      const divNotificacao = document.createElement('div');
-      divNotificacao.className = 'notificacao';
-      divNotificacao.innerHTML = `<i class="bi bi-check-circle" style="margin-right:8px;"></i> ${mensagem}`;
+                    if (e.target === counter || counter.contains(e.target)) {
+                        isDragging = true;
+                        counter.classList.add('dragging');
+                    }
+                };
 
-      document.getElementById('notificacoes').appendChild(divNotificacao);
+                const dragMove = (e) => {
+                    if (isDragging) {
+                        e.preventDefault();
+                        
+                        const clientX = e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
+                        const clientY = e.type === "touchmove" ? e.touches[0].clientY : e.clientY;
+                        
+                        currentX = clientX - initialX;
+                        currentY = clientY - initialY;
 
-      setTimeout(() => {
-        divNotificacao.remove();
-      }, 5000);
-    }
+                        xOffset = currentX;
+                        yOffset = currentY;
 
-    function loopNotificacoes() {
-      mostrarNotificacao();
-      const tempo = Math.floor(Math.random() * 7000) + 8000;
-      setTimeout(loopNotificacoes, tempo);
-    }
+                        // Limitar dentro da viewport
+                        const rect = counter.getBoundingClientRect();
+                        const maxX = window.innerWidth - rect.width;
+                        const maxY = window.innerHeight - rect.height;
 
-    window.onload = () => {
-      loopNotificacoes();
-    };
-  </script>
+                        xOffset = Math.max(0, Math.min(xOffset, maxX));
+                        yOffset = Math.max(0, Math.min(yOffset, maxY));
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+                        counter.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+                        counter.style.position = 'fixed';
+                        counter.style.top = '60px';
+                        counter.style.right = 'auto';
+                        counter.style.left = '20px';
+                    }
+                };
+
+                const dragEnd = () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        counter.classList.remove('dragging');
+                    }
+                };
+
+                // Mouse events
+                counter.addEventListener('mousedown', dragStart);
+                document.addEventListener('mousemove', dragMove);
+                document.addEventListener('mouseup', dragEnd);
+
+                // Touch events para mobile
+                counter.addEventListener('touchstart', dragStart, { passive: false });
+                document.addEventListener('touchmove', dragMove, { passive: false });
+                document.addEventListener('touchend', dragEnd);
+            }
+            
+            // Animações de entrada
+            initAnimations() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.animationPlayState = 'running';
+                        }
+                    });
+                }, observerOptions);
+                
+                document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+                    el.style.animationPlayState = 'paused';
+                    observer.observe(el);
+                });
+            }
+            
+            // Micro-interações
+            initInteractions() {
+                // Hover effects para cards
+                document.querySelectorAll('.hover-lift').forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        card.style.transform = 'translateY(-8px)';
+                    });
+                    
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'translateY(0)';
+                    });
+                });
+                
+                // Efeito de glow
+                document.querySelectorAll('.hover-glow').forEach(element => {
+                    element.addEventListener('mouseenter', () => {
+                        element.style.boxShadow = '0 0 30px rgba(0, 255, 65, 0.3)';
+                    });
+                    
+                    element.addEventListener('mouseleave', () => {
+                        element.style.boxShadow = '';
+                    });
+                });
+                
+                // Smooth scroll
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            }
+        }
+        
+        // Inicializar sistema
+        document.addEventListener('DOMContentLoaded', function() {
+            new PremiumInteractionSystem();
+            
+            // Preload de imagens críticas
+            const criticalImages = [
+                'imgs/logo.png',
+                'imgs/android.png', 
+                'imgs/iphone.png',
+                'imgs/CLT.jpg'
+            ];
+            
+            criticalImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+        
+        // Otimização de performance
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+                console.log('✅ Sistema Premium inicializado com sucesso!');
+            });
+        }
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
