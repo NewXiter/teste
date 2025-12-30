@@ -711,7 +711,255 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             animation: shimmer 4s infinite;
         }
+  /* ===================== PACKAGES SECTION ===================== */
+        .packages-section {
+            padding: 80px 1rem;
+        }
 
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .package-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-glow));
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 60px hsla(137, 100%, 50%, 0.15);
+        }
+
+        .package-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .package-card.featured {
+            border-color: hsl(145, 100%, 45%);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(90deg, var(--primary), var(--primary-glow));
+            color: hsl(0, 0%, 0%);
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .package-icon {
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--primary);
+            box-shadow: 0 8px 32px hsla(137, 100%, 50%, 0.3);
+        }
+
+        .package-icon svg {
+            width: 48px;
+            height: 48px;
+            color: hsl(0, 0%, 0%);
+        }
+
+        .package-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .package-subtitle {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex: 1;
+        }
+
+        .package-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid hsla(0, 0%, 100%, 0.05);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .package-features li:hover {
+            padding-left: 8px;
+            color: var(--primary);
+        }
+
+        .package-features li svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .package-features li.fire svg { color: var(--danger); }
+        .package-features li.check svg { color: var(--primary); }
+        .package-features li.crown svg { color: var(--gold); }
+
+        .package-price {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-old {
+            color: var(--danger);
+            text-decoration: line-through;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .price-label {
+            color: var(--muted);
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .price-new {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .package-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: linear-gradient(90deg, var(--primary), var(--primary-glow));
+            color: hsl(0, 0%, 0%);
+            border: none;
+            cursor: pointer;
+        }
+
+        .package-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 30px hsla(137, 100%, 50%, 0.4);
+        }
+
+        .package-button.gold {
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+        }
+
+        /* ===================== GUARANTEE SECTION ===================== */
+        .guarantee-section {
+            padding: 80px 1rem;
+            text-align: center;
+        }
+
+        .guarantee-badge {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 0 40px hsla(137, 100%, 50%, 0.5);
+        }
+
+        .guarantee-days {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            color: hsl(0, 0%, 0%);
+            line-height: 1;
+        }
+
+        .guarantee-text {
+            color: hsl(0, 0%, 0%);
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .guarantee-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-description {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: var(--muted);
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .guarantee-points {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .guarantee-point {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .guarantee-point svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
           /* CTA Button */
         .cta-button {
             display: inline-block;
