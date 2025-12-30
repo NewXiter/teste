@@ -67,6 +67,66 @@
             max-width: 100%;
             overflow-x: hidden;
         }
+/* ===================== UTILITY CLASSES ===================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .text-danger {
+            color: var(--danger);
+        }
+
+        .text-gold {
+            color: var(--gold);
+        }
+
+        .text-muted {
+            color: var(--muted);
+        }
+
+        .neon-primary {
+            color: var(--primary);
+            text-shadow: 
+                0 0 5px var(--primary),
+                0 0 10px var(--primary),
+                0 0 20px var(--primary),
+                0 0 40px var(--primary);
+            animation: neonPulse 3s ease-in-out infinite alternate;
+        }
+
+        .neon-danger {
+            color: var(--danger);
+            text-shadow: 
+                0 0 5px var(--danger),
+                0 0 10px var(--danger),
+                0 0 20px var(--danger);
+            animation: neonDangerPulse 2s ease-in-out infinite alternate;
+        }
+
+        .text-gradient-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 50%, hsl(130, 100%, 55%) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 50%, hsl(130, 100%, 55%) 100%);
+        }
+
+        .bg-gradient-danger {
+            background: linear-gradient(135deg, var(--danger), var(--danger-glow));
+        }
+
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        }
 
         /* Background animado profissional */
         body::before {
