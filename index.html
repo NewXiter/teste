@@ -1,41 +1,65 @@
-<!doctypehtml>
+<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel XIT - Domine o Free Fire | Nº1 do Brasil</title>
-    <meta name="description" content="Painel XIT - A solução definitiva para dominar o Free Fire. Full Vermelho Garantido! Recursos exclusivos para Android e iOS. +10.000 players satisfeitos.">
-    <meta name="keywords" content="painel xit, free fire, aimbot, hack, cheat, android, ios, iphone">
-    <link rel="canonical" href="https://painelxit.com">
-    
+    <meta name="description"
+        content="Painel XIT - A solução definitiva para dominar o Free Fire. Full Vermelho Garantido! Recursos exclusivos para Android e iOS. +10.000 players satisfeitos.">
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Wistia Scripts -->
     <script src="https://fast.wistia.com/player.js" async></script>
     <script src="https://fast.wistia.com/embed/wkc2wjaez1.js" async type="module"></script>
-    
+    <script src="https://fast.wistia.com/embed/m8pcxycab8.js" async type="module"></script>
+
     <style>
-        /* ===================== RESET & VARIABLES ===================== */
+        /* ==================== VARIABLES ==================== */
+        :root {
+            /* Colors */
+            --color-primary: #00FF88;
+            /* Neon Green */
+            --color-primary-dark: #00cc6a;
+            --color-secondary: #FF0055;
+            /* Neon Red */
+            --color-secondary-dark: #cc0044;
+            --color-accent: #FFD700;
+            /* Gold */
+
+            --bg-dark: #050505;
+            --bg-card: rgba(20, 20, 20, 0.6);
+            --bg-card-hover: rgba(30, 30, 30, 0.8);
+
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+
+            --gradient-primary: linear-gradient(135deg, var(--color-primary), #00A859);
+            --gradient-secondary: linear-gradient(135deg, var(--color-secondary), #A80038);
+            --gradient-gold: linear-gradient(135deg, #FFD700, #FFA500);
+
+            /* Effects */
+            --shadow-neon-green: 0 0 10px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.3);
+            --shadow-neon-red: 0 0 10px rgba(255, 0, 85, 0.5), 0 0 20px rgba(255, 0, 85, 0.3);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+            --backdrop-blur: blur(12px);
+        }
+
+        /* ==================== RESET & BASE ==================== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        :root {
-            --primary: hsl(137, 100%, 50%);
-            --primary-glow: hsl(145, 100%, 45%);
-            --primary-dark: hsl(137, 100%, 40%);
-            --background: hsl(0, 0%, 4%);
-            --foreground: hsl(0, 0%, 100%);
-            --card-bg: hsl(0, 0%, 7%);
-            --muted: hsl(0, 0%, 65%);
-            --border: hsl(0, 0%, 15%);
-            --danger: hsl(0, 72%, 51%);
-            --danger-glow: hsl(340, 82%, 52%);
-            --gold: hsl(43, 96%, 56%);
-            --gold-dark: hsl(36, 100%, 50%);
+            outline: none;
         }
 
         html {
@@ -43,1929 +67,1043 @@
         }
 
         body {
-            font-family: 'Inter', 'Poppins', sans-serif;
-            background: var(--background);
-            color: var(--foreground);
+            background-color: var(--bg-dark);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 85, 0.05) 0%, transparent 40%);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
         }
 
+        h1,
+        h2,
+        h3,
+        h4,
         .font-display {
-            font-family: 'Bebas Neue', cursive;
-            font-weight: 400;
-            line-height: 1.2;
-            letter-spacing: 0.02em;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        /* ===================== UTILITY CLASSES ===================== */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ==================== UTILITIES ==================== */
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 20px;
+        }
+
+        .text-center {
+            text-align: center;
         }
 
         .text-primary {
-            color: var(--primary);
+            color: var(--color-primary);
         }
 
-        .text-danger {
-            color: var(--danger);
+        .text-secondary {
+            color: var(--color-secondary);
         }
 
-        .text-gold {
-            color: var(--gold);
+        .text-accent {
+            color: var(--color-accent);
         }
 
-        .text-muted {
-            color: var(--muted);
+        .d-flex {
+            display: flex;
         }
 
-        .neon-primary {
-            color: var(--primary);
-            text-shadow: 
-                0 0 5px var(--primary),
-                0 0 10px var(--primary),
-                0 0 20px var(--primary),
-                0 0 40px var(--primary);
-            animation: neonPulse 3s ease-in-out infinite alternate;
+        .justify-center {
+            justify-content: center;
         }
 
-        .neon-danger {
-            color: var(--danger);
-            text-shadow: 
-                0 0 5px var(--danger),
-                0 0 10px var(--danger),
-                0 0 20px var(--danger);
-            animation: neonDangerPulse 2s ease-in-out infinite alternate;
+        .align-center {
+            align-items: center;
         }
 
-        .text-gradient-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 50%, hsl(130, 100%, 55%) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .flex-column {
+            flex-direction: column;
         }
 
-        .bg-gradient-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 50%, hsl(130, 100%, 55%) 100%);
+        .gap-1 {
+            gap: 1rem;
         }
 
-        .bg-gradient-danger {
-            background: linear-gradient(135deg, var(--danger), var(--danger-glow));
+        .gap-2 {
+            gap: 2rem;
         }
 
-        .bg-gradient-gold {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        .section-padding {
+            padding: 80px 0;
         }
 
-        /* ===================== ANIMATIONS ===================== */
-        @keyframes neonPulse {
-            from { 
-                text-shadow: 
-                    0 0 5px var(--primary),
-                    0 0 10px var(--primary),
-                    0 0 20px var(--primary);
+        .hidden {
+            display: none !important;
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            to { 
-                text-shadow: 
-                    0 0 8px var(--primary),
-                    0 0 15px var(--primary),
-                    0 0 25px var(--primary),
-                    0 0 35px var(--primary);
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        @keyframes neonDangerPulse {
-            from { 
-                text-shadow: 
-                    0 0 5px var(--danger),
-                    0 0 10px var(--danger);
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4);
             }
-            to { 
-                text-shadow: 
-                    0 0 8px var(--danger),
-                    0 0 15px var(--danger),
-                    0 0 25px var(--danger);
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(0, 255, 136, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
             }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.7; }
-        }
-
-        @keyframes pulse-scale {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes glow-pulse {
-            0%, 100% { 
-                box-shadow: 0 0 30px hsla(137, 100%, 50%, 0.5), 0 15px 40px rgba(0, 0, 0, 0.4);
-                background-position: 0% 50%;
+            0%,
+            100% {
+                transform: translateY(0);
             }
-            50% { 
-                box-shadow: 0 0 50px hsla(137, 100%, 50%, 0.8), 0 20px 50px rgba(0, 0, 0, 0.5);
-                background-position: 100% 50%;
+
+            50% {
+                transform: translateY(-10px);
             }
         }
 
-        @keyframes cta-bounce {
-            0%, 100% { transform: translateY(0) scale(1); }
-            25% { transform: translateY(-4px) scale(1.02); }
-            50% { transform: translateY(-2px) scale(1.01); }
+        @keyframes shine {
+            0% {
+                left: -100%;
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
         }
 
-        @keyframes bounce-subtle {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        .animate-up {
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
         }
 
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
+        .delay-100 {
+            animation-delay: 0.1s;
         }
 
-        @keyframes slideInLeft {
-            from { transform: translateX(-400px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        .delay-200 {
+            animation-delay: 0.2s;
         }
 
-        @keyframes slideOutLeft {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(-400px); opacity: 0; }
+        .delay-300 {
+            animation-delay: 0.3s;
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes backgroundPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-        }
-
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-pulse-scale {
-            animation: pulse-scale 2s ease-in-out infinite;
-        }
-
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        /* Shimmer Effect */
-        .shimmer-effect {
+        /* ==================== COMPONENTS ==================== */
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
         }
 
-        .shimmer-effect::before {
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: #000;
+            box-shadow: var(--shadow-neon-green);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+        }
+
+        .btn-secondary {
+            background: var(--gradient-secondary);
+            color: #fff;
+            box-shadow: var(--shadow-neon-red);
+        }
+
+        .btn-gold {
+            background: var(--gradient-gold);
+            color: #000;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn::after {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
-            width: 100%;
+            width: 50%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shimmer 4s infinite;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transform: skewX(-25deg);
+            animation: shine 3s infinite;
         }
 
-        /* ===================== DISCOUNT BANNER ===================== */
+        /* ==================== HEADER / HERO ==================== */
         .discount-banner {
-            background: linear-gradient(90deg, var(--primary), hsl(145, 100%, 45%), var(--primary));
-            padding: 12px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .discount-banner span {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            color: hsl(0, 0%, 0%);
-        }
-
-        .discount-banner .highlight {
-            color: hsl(50, 100%, 50%);
-            text-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
-        }
-
-        /* ===================== SALES COUNTER ===================== */
-        .sales-counter {
-            position: fixed;
-            top: 60px;
-            right: 16px;
-            z-index: 90;
-            background: linear-gradient(135deg, var(--danger), hsl(330, 80%, 50%));
+            background: var(--gradient-secondary);
             color: white;
-            padding: 12px 16px;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 0.875rem;
-            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
-            cursor: grab;
-            animation: bounce-subtle 3s infinite;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .sales-counter:active {
-            cursor: grabbing;
-        }
-
-        /* ===================== PURCHASE NOTIFICATIONS ===================== */
-        .notifications-container {
-            position: fixed;
-            bottom: 16px;
-            left: 16px;
-            z-index: 95;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .purchase-notification {
-            background: var(--card-bg);
-            border: 2px solid var(--primary);
-            border-radius: 16px;
-            padding: 16px;
-            max-width: 300px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            animation: slideInLeft 0.5s ease forwards;
-        }
-
-        .purchase-notification.exiting {
-            animation: slideOutLeft 0.5s ease forwards;
-        }
-
-        .purchase-notification .content {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .purchase-notification .icon-wrapper {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .purchase-notification .details {
-            flex: 1;
-        }
-
-        .purchase-notification .label {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 0.75rem;
-        }
-
-        .purchase-notification .product {
+            padding: 10px;
+            font-size: 0.9rem;
             font-weight: 600;
-            font-size: 0.875rem;
+            z-index: 100;
+            position: sticky;
+            top: 0;
         }
 
-        .purchase-notification .info {
-            color: var(--muted);
-            font-size: 0.75rem;
-        }
-
-        /* ===================== HERO SECTION ===================== */
         .hero {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 100px 1rem 60px;
-            background: 
-                radial-gradient(ellipse at center top, hsla(137, 100%, 50%, 0.1) 0%, transparent 60%),
-                linear-gradient(135deg, hsl(0, 0%, 4%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 7%) 100%);
+            padding: 100px 0 60px;
             position: relative;
-            overflow: hidden;
+            text-align: center;
         }
 
-        .hero::before {
-            content: '';
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(circle at 20% 20%, hsla(137, 100%, 50%, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, hsla(145, 100%, 45%, 0.08) 0%, transparent 50%);
-            z-index: 0;
-            animation: backgroundPulse 20s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-        }
-
-        .hero-logo {
-            width: 160px;
-            height: auto;
-            margin: 0 auto 2rem;
-            animation: float 6s ease-in-out infinite;
-            filter: drop-shadow(0 0 30px hsla(137, 100%, 50%, 0.6));
-        }
-
-        .hero-title {
-            font-family: 'Bebas Neue', cursive;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            letter-spacing: 3px;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .hero-benefits {
-            font-size: 1.125rem;
-            color: var(--muted);
-            margin-bottom: 2rem;
-            line-height: 2;
-        }
-
-        .hero-benefits p {
-            margin: 0.5rem 0;
-        }
-
-        .hero-benefits strong {
-            color: var(--foreground);
-        }
-
-        .users-counter {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: hsla(137, 100%, 50%, 0.1);
-            border: 2px solid var(--primary);
-            padding: 12px 24px;
-            border-radius: 9999px;
-            margin-bottom: 2rem;
-            animation: pulse-scale 2s ease-in-out infinite;
-        }
-
-        .users-counter svg {
-            width: 20px;
-            height: 20px;
-            color: var(--primary);
-        }
-
-        .users-counter strong {
-            color: var(--primary);
-            text-shadow: 0 0 10px var(--primary);
-        }
-
-        /* Video Container */
-        .video-wrapper {
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 2px solid hsla(137, 100%, 50%, 0.3);
-            box-shadow: 0 0 30px hsla(137, 100%, 50%, 0.3);
-            transition: transform 0.5s ease;
-            position: relative;
-        }
-
-        .video-wrapper:hover {
-            transform: scale(1.02);
-        }
-
-        .video-wrapper::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, hsla(137, 100%, 50%, 0.1), transparent, hsla(137, 100%, 50%, 0.1));
-            pointer-events: none;
-        }
-
-        .wistia-player {
-            width: 100%;
-            aspect-ratio: 16/9;
-        }
-
-        /* CTA Button */
-        .cta-button {
-            display: inline-block;
-            padding: 1.25rem 3rem;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: hsl(0, 0%, 0%);
-            background: linear-gradient(90deg, var(--primary), var(--primary-glow), var(--primary));
-            background-size: 200% 200%;
-            border: none;
-            border-radius: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 40px hsla(137, 100%, 50%, 0.6), 0 20px 50px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
-            animation: glow-pulse 2s infinite, cta-bounce 3s infinite;
-            position: relative;
+            z-index: -1;
             overflow: hidden;
         }
 
-        .cta-button::before {
-            content: '';
+        .hero-blob {
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 0 80px hsla(137, 100%, 50%, 0.9), 0 30px 70px rgba(0, 0, 0, 0.6);
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        /* ===================== FEATURES SECTION ===================== */
-        .features-section {
-            padding: 80px 1rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--primary-glow));
-            transform: scaleX(0);
-            transition: transform 0.5s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px hsla(137, 100%, 50%, 0.15);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+            width: 50vw;
+            height: 50vw;
+            background: var(--color-primary);
+            filter: blur(150px);
+            opacity: 0.15;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 8px 32px hsla(137, 100%, 50%, 0.3);
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 8s ease-in-out infinite;
         }
 
-        .feature-icon svg {
-            width: 40px;
-            height: 40px;
-            color: hsl(0, 0%, 0%);
+        .logo-img {
+            height: 80px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.3));
         }
 
-        .feature-title {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
-        .feature-description {
-            color: var(--muted);
-            line-height: 1.7;
+        .hero h1 span {
+            display: block;
         }
 
-        /* ===================== SOLUTIONS SECTION ===================== */
-        .solutions-section {
-            padding: 80px 1rem;
-            background: linear-gradient(180deg, hsl(220, 20%, 8%) 0%, var(--background) 100%);
-        }
-
-        .section-title {
-            font-family: 'Bebas Neue', cursive;
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            text-align: center;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--muted);
-            font-size: 1.125rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
+        .hero-stats {
+            display: inline-flex;
+            gap: 1rem;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-stats i {
+            color: var(--color-primary);
+        }
+
         .video-container {
-            max-width: 896px;
-            margin: 0 auto;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 2px solid hsla(137, 100%, 50%, 0.3);
-            box-shadow: 0 0 40px hsla(137, 100%, 50%, 0.2);
-            position: relative;
-        }
-
-        .video-container::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, hsla(137, 100%, 50%, 0.1), transparent, hsla(137, 100%, 50%, 0.05));
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .video-caption {
-            text-align: center;
-            color: var(--muted);
-            margin-top: 1.5rem;
-            font-size: 1rem;
-        }
-
-        /* ===================== SOCIAL PROOF SECTION ===================== */
-        .social-proof-section {
-            padding: 60px 1rem;
-        }
-
-        .social-proof-card {
-            background: linear-gradient(135deg, var(--primary), var(--primary-glow), hsl(130, 100%, 55%));
-            border-radius: 16px;
-            padding: 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-proof-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shimmer 4s infinite;
+            max-width: 900px;
+            margin: 2rem auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.1);
+            background: #000;
+            aspect-ratio: 16/9;
         }
 
-        .social-proof-title {
-            font-family: 'Bebas Neue', cursive;
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            color: hsl(0, 0%, 0%);
-            margin-bottom: 2rem;
-            letter-spacing: 1px;
-        }
-
-        .stats-grid {
+        /* ==================== FEATURES ==================== */
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2.5rem;
-            color: hsl(0, 0%, 0%);
-        }
-
-        .stat-label {
-            color: hsla(0, 0%, 0%, 0.8);
-            font-size: 0.875rem;
-        }
-
-        .social-proof-quote {
-            color: hsl(0, 0%, 0%);
-            font-weight: 600;
-            font-size: 1.125rem;
-        }
-
-        /* ===================== PACKAGES SECTION ===================== */
-        .packages-section {
-            padding: 80px 1rem;
-        }
-
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .package-card {
-            background: var(--card-bg);
-            border: 2px solid var(--border);
-            border-radius: 20px;
-            padding: 2rem;
-            position: relative;
-            transition: all 0.5s ease;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
+        .feature-card {
+            background: var(--bg-card);
+            border: var(--glass-border);
+            padding: 2.5rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: all 0.4s ease;
+            backdrop-filter: var(--backdrop-blur);
         }
 
-        .package-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--primary-glow));
-            transform: scaleX(0);
-            transition: transform 0.5s ease;
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: var(--bg-card-hover);
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .package-card:hover {
-            transform: translateY(-15px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px hsla(137, 100%, 50%, 0.15);
-        }
-
-        .package-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .package-card.featured {
-            border-color: hsl(145, 100%, 45%);
-        }
-
-        .package-badge {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: linear-gradient(90deg, var(--primary), var(--primary-glow));
-            color: hsl(0, 0%, 0%);
-            padding: 0.5rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 0.875rem;
-        }
-
-        .package-icon {
-            width: 96px;
-            height: 96px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            background: rgba(0, 255, 136, 0.1);
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            border: 4px solid var(--primary);
-            box-shadow: 0 8px 32px hsla(137, 100%, 50%, 0.3);
+            margin-left: auto;
+            margin-right: auto;
+            transition: all 0.3s;
         }
 
-        .package-icon svg {
-            width: 48px;
-            height: 48px;
-            color: hsl(0, 0%, 0%);
+        .feature-card:hover .feature-icon {
+            background: var(--color-primary);
+            color: #000;
+            box-shadow: 0 0 20px var(--color-primary);
         }
 
-        .package-title {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .package-subtitle {
-            text-align: center;
-            color: var(--muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .package-features {
-            list-style: none;
-            margin-bottom: 2rem;
-            flex: 1;
-        }
-
-        .package-features li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid hsla(0, 0%, 100%, 0.05);
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .package-features li:hover {
-            padding-left: 8px;
-            color: var(--primary);
-        }
-
-        .package-features li svg {
-            width: 20px;
-            height: 20px;
-            flex-shrink: 0;
-        }
-
-        .package-features li.fire svg { color: var(--danger); }
-        .package-features li.check svg { color: var(--primary); }
-        .package-features li.crown svg { color: var(--gold); }
-
-        .package-price {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .price-old {
-            color: var(--danger);
-            text-decoration: line-through;
-            font-family: 'Bebas Neue', cursive;
+        .feature-title {
             font-size: 1.5rem;
-            margin-bottom: 0.25rem;
+            margin-bottom: 1rem;
         }
 
-        .price-label {
-            color: var(--muted);
-            font-size: 0.875rem;
-            margin-bottom: 0.25rem;
+        .feature-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        .price-new {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 3rem;
-            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+        /* ==================== CAROUSEL (DEPOIMENTOS) ==================== */
+        .carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 20px;
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonial-card {
+            flex: 0 0 320px;
+            scroll-snap-align: center;
+            background: #121212;
+            padding: 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            color: var(--color-primary);
+        }
+
+        /* ==================== STATS ==================== */
+        .stats-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            background: linear-gradient(to bottom, #fff, #aaa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 0.5rem;
         }
 
-        .package-button {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            font-size: 1rem;
-            font-weight: 700;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            background: linear-gradient(90deg, var(--primary), var(--primary-glow));
-            color: hsl(0, 0%, 0%);
-            border: none;
-            cursor: pointer;
+        .stat-label {
+            color: var(--color-primary);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .package-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 30px hsla(137, 100%, 50%, 0.4);
+        /* ==================== PRICING ==================== */
+        .pricing-section {
+            position: relative;
         }
 
-        .package-button.gold {
-            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
-        /* ===================== GUARANTEE SECTION ===================== */
-        .guarantee-section {
-            padding: 80px 1rem;
-            text-align: center;
-        }
-
-        .guarantee-badge {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-glow));
-            border-radius: 50%;
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            padding: 3rem 2rem;
+            position: relative;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            box-shadow: 0 0 40px hsla(137, 100%, 50%, 0.5);
-        }
-
-        .guarantee-days {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 3rem;
-            color: hsl(0, 0%, 0%);
-            line-height: 1;
-        }
-
-        .guarantee-text {
-            color: hsl(0, 0%, 0%);
-            font-weight: 700;
-            font-size: 0.875rem;
-        }
-
-        .guarantee-title {
-            font-family: 'Bebas Neue', cursive;
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 1rem;
-        }
-
-        .guarantee-description {
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            color: var(--muted);
-            font-size: 1.125rem;
-            line-height: 1.8;
-        }
-
-        .guarantee-points {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .guarantee-point {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .guarantee-point svg {
-            width: 24px;
-            height: 24px;
-            color: var(--primary);
-        }
-
-        /* ===================== FAQ SECTION ===================== */
-        .faq-section {
-            padding: 80px 1rem;
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            margin-bottom: 1rem;
+            transition: transform 0.3s;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
 
-        .faq-item:hover {
-            border-color: var(--primary);
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--color-accent);
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-gold);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .plan-name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price {
+            font-size: 3.5rem;
+            font-family: 'Bebas Neue';
+            color: var(--color-primary);
+        }
+
+        .plan-price small {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-family: 'Inter';
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--color-secondary);
+            font-size: 1.2rem;
+        }
+
+        .features-list {
+            margin: 2rem 0;
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .features-list li i {
+            color: var(--color-primary);
+        }
+
+        .features-list li.pro i {
+            color: var(--color-accent);
+        }
+
+        .features-list li.fire i {
+            color: var(--color-secondary);
+        }
+
+        /* ==================== FAQ ==================== */
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
         }
 
         .faq-question {
-            padding: 1.25rem;
+            padding: 1.5rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            transition: background 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            transition: background 0.3s;
         }
 
         .faq-question:hover {
-            background: hsla(137, 100%, 50%, 0.05);
-        }
-
-        .faq-question svg {
-            width: 24px;
-            height: 24px;
-            color: var(--primary);
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.open .faq-question svg {
-            transform: rotate(180deg);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+            color: var(--text-muted);
         }
 
-        .faq-item.open .faq-answer {
-            max-height: 500px;
-            padding: 0 1.25rem 1.25rem;
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            /* approximates content height */
+            padding-bottom: 1.5rem;
         }
 
-        .faq-answer p {
-            color: var(--muted);
-            line-height: 1.7;
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
         }
 
-        /* ===================== FOOTER ===================== */
-        .footer {
-            padding: 40px 1rem;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-content {
+        /* ==================== NOTIFICATIONS ==================== */
+        .sales-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(20, 20, 20, 0.9);
+            border-left: 4px solid var(--color-primary);
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 1.5rem;
+            gap: 15px;
+            transform: translateX(-150%);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+            max-width: 350px;
         }
 
-        .footer-copyright {
-            color: var(--muted);
-            font-size: 0.875rem;
+        .sales-popup.show {
+            transform: translateX(0);
         }
 
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .footer-social a {
+        .popup-icon {
             width: 40px;
             height: 40px;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
+            background: rgba(0, 255, 136, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--foreground);
-            text-decoration: none;
-            transition: all 0.3s ease;
+            color: var(--color-primary);
         }
 
-        .footer-social a:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: hsl(0, 0%, 0%);
-            transform: translateY(-3px);
+        .popup-content h4 {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
         }
 
-        .footer-developer {
-            font-size: 0.75rem;
-            color: var(--muted);
+        .popup-content p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
 
-        .footer-developer a {
-            color: var(--primary);
-            text-decoration: none;
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: #000;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* ===================== RESPONSIVE ===================== */
+        /* ==================== RESPONSIVE ==================== */
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: clamp(2rem, 10vw, 3.5rem);
+            .hero h1 {
+                font-size: 2.8rem;
             }
 
-            .hero-logo {
-                width: 120px;
+            .section-padding {
+                padding: 50px 0;
             }
 
-            .cta-button {
-                padding: 1rem 2rem;
-                font-size: 1.25rem;
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
             }
 
-            .packages-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .sales-counter {
-                top: 50px;
-                right: 8px;
-                padding: 8px 12px;
-                font-size: 0.75rem;
-            }
-
-            .purchase-notification {
-                max-width: 260px;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
-            }
-
-            .stat-number {
-                font-size: 1.75rem;
+            .sales-popup {
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+                width: auto;
+                max-width: none;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Facebook Pixel noscript -->
-    <noscript>
-        <img height="1" width="1" style="display:none"
-          src="https://www.facebook.com/tr?id=3525977697696631&ev=PageView&noscript=1" />
-    </noscript>
-    
-    <!-- Banner de Desconto com Data Real -->
-    <div class="discount-banner">
+    <!-- DISCOUNT BANNER -->
+    <div class="discount-banner text-center">
         <div class="container">
-            <span>🔥 OFERTA EXCLUSIVA: <span class="highlight">FIM DE ANO!</span> </span> <span id="currentDate"></span>
+            🔥 PROMOÇÃO RELÂMPAGO: <span class="text-accent" id="currentDate">HOJE</span> É O ÚLTIMO DIA!
         </div>
     </div>
 
-    <!-- Contador de Vendas Móvel e Arrastável -->
-    <div class="sales-counter-mobile" id="salesCounterMobile">
-        <i class="fas fa-fire"></i> <span id="salesCount">252</span> vendas hoje!
+    <!-- SALES FLOATING WIDGET (MOBILE) -->
+    <div
+        style="position: fixed; top: 70px; right: 10px; z-index: 99; background: rgba(0,0,0,0.8); padding: 5px 15px; border-radius: 20px; border: 1px solid var(--color-secondary); backdrop-filter: blur(5px); font-size: 0.8rem;">
+        <i class="fas fa-fire text-secondary"></i> <span id="salesCount">250</span> vendas hoje
     </div>
 
-    <!-- Container para Notificações Premium -->
-    <div class="notification-container" id="notificationContainer"></div>
-
-    <!-- Hero Section Premium -->
-    <section class="hero-premium">
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-blob"></div>
+        </div>
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center hero-content fade-in-up">
-                    <img src="imgs/logo.png" alt="New Sensi Logo" class="logo-premium" />
-                    
-                    <h1 class="hero-title">
-                        O <span class="neon-primary">PAINEL XIT</span> Nº1 DO BRASIL<br>
-                        <span class="neon-danger">FULL VERMELHO</span> GARANTIDO!
-                    </h1>
-                    
-                    <p class="hero-subtitle">
-                        • PAINEL com + <strong class="neon-primary">10 mil Players</strong><br>
-                        • Sua mira vai dar só <span class="neon-danger">Full Vermelho</span>!<br>
-                        • Painel 100% Anti-Ban Anti-Blacklist!<br> 
-                        • Suporte Exclusivo 24Horas!<br> 
-                    </p>
-                    
-                    <div class="users-counter">
-                        <i class="fas fa-users"></i>
-                        <strong id="userCounter" class="neon-primary">998</strong> usuários ativos agora!
-                    </div>
-                    
-                    <div class="video-container mt-4">
-                        <div class="ratio ratio-16x9">
-                            <script src="https://fast.wistia.com/player.js" async></script>
-                <script src="https://fast.wistia.com/embed/m8pcxycab8.js" async type="module"></script>
-                <style>
-                    wistia-player[media-id='m8pcxycab8']:not(:defined) { 
-                        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/m8pcxycab8/swatch'); 
-                        display: block; 
-                        filter: blur(5px); 
-                        padding-top: 56.25%; 
-                          }
-                </style>
-                             <wistia-player media-id="m8pcxycab8" aspect="1.7777777777777777"></wistia-player>
-            </div>
-                        </div>
-                    
-                    <a href="#pacotes" class="cta-premium will-change-transform">
-                         QUERO MEU PAINEL XIT!
-                    </a>
+            <div class="animate-up">
+                <img src="imgs/logo.png" alt="Painel XIT Logo" class="logo-img"
+                    style="max-height: 100px; margin: 0 auto 20px;">
+
+                <h1>
+                    DOMINE O <span class="text-primary">FREE FIRE</span><br>
+                    <span class="text-secondary" style="font-size: 0.6em; letter-spacing: 5px;">FULL VERMELHO
+                        GARANTIDO</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    A ferramenta Nº1 do Brasil usada por mais de 10.000 players.
+                    Sem banimentos. Sem complicações. Apenas HS.
+                </p>
+
+                <div class="hero-stats">
+                    <span><i class="fas fa-user-shield"></i> Anti-Ban 100%</span>
+                    <span><i class="fas fa-bolt"></i> Ativação Instantânea</span>
+                </div>
+
+                <div class="video-container">
+                    <wistia-player media-id="m8pcxycab8" aspect="1.7777777777777777"></wistia-player>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <a href="#pacotes" class="btn btn-primary">QUERO MEU PAINEL XIT</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section Premium -->
-    <section class="py-5">
+    <!-- FEATURES SECTION -->
+    <section class="section-padding" id="features">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 fade-in-left">
-                    <div class="feature-card hover-lift">
-                        <div class="feature-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3 class="text-center mb-3">Mira 2x Automática</h3>
-                        <p class="text-center">
-                            Mira 100% automática com precisão cirúrgica. Cada tiro é CAPA garantida. 
-                           2x Automática ela tem 100% de precisão de mira sem erra um tiro! Transforme-se no player mais temido do Free Fire
-                        </p>
-                    </div>
+            <div class="text-center mb-5">
+                <h2 class="text-primary" style="font-size: 1.5rem;">POR QUE ESCOLHER O XIT?</h2>
+                <h3 style="font-size: 2.5rem;">VANTAGENS <span class="text-secondary">EXCLUSIVAS</span></h3>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-crosshairs"></i></div>
+                    <h4 class="feature-title">AIMBOT LEGIT</h4>
+                    <p class="feature-text">Mira que gruda na cabeça com suavidade natural. Seus amigos vão achar que
+                        você apenas treinou muito.</p>
                 </div>
-                
-                <div class="col-lg-4 fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="feature-card hover-lift">
-                        <div class="feature-icon">
-                            <i class="fas fa-crosshairs"></i>
-                        </div>
-                        <h3 class="text-center mb-3"> Rastreamento pra cabeça</h3>
-                        <p class="text-center">
-                            Com Sistema de rastreamento avançado que gruda na cabeça dos inimigos. 
-                            2x automática que gruda Full, mesmo à longa distância.
-                        </p>
-                    </div>
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-ghost"></i></div>
+                    <h4 class="feature-title">BYPASS ANTI-BAN</h4>
+                    <p class="feature-text">Sistema de segurança de nível militar. Jogue na sua conta principal sem medo
+                        de blacklists.</p>
                 </div>
-                
-                <div class="col-lg-4 fade-in-right" style="animation-delay: 0.4s;">
-                    <div class="feature-card hover-lift">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3 class="text-center mb-3"> Sobre nosso Painel XIT</h3>
-                        <p class="text-center">
-                           Nosso Painel quanta com várias fuções no Sistema, como ESP, Aimbot, aimkill, e várias outras opções Avançadas. Jogue com segurança total, 
-                            sem risco de banimento ou blacklist. Garantia de proteção.
-                        </p>
-                    </div>
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h4 class="feature-title">100% OTIMIZADO</h4>
+                    <p class="feature-text">Roda liso em qualquer celular (Android ou iOS). Não pesa no sistema e não
+                        esquenta o aparelho.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Feedbacks - CAROUSEL MANUAL -->
-    <section id="beneficios" class="beneficios">
-        
-    <div class="text-center p-3 mt-2">
-    <h1 class="display-2" style="color: #ffffff;"> 
-        Veja abaixo alguns
-        <span class="neon-red">
-            <span class="neon-primary">FeedBacks</span> de clientes
-        </span>
-    </h1>
-</div>
-        
-<div id="carouselDepoimentos" class="carousel slide container py-5">
-    <div class="carousel-inner">
-        <!-- Primeiro depoimento -->
-        <div class="carousel-item active">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="imgs/pvsocial (6).jpg" alt="Depoimento 1" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Segundo depoimento -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="imgs/pvsocial (2).jpg" alt="Depoimento 2" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Terceiro depoimento -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="imgs/prova social 03.PNG" alt="Depoimento 3" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Quarto depoimento -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="imgs/pvsocial (4).jpg" alt="Depoimento 4" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Quinto depoimento -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="imgs/pvsocial (5).jpg" alt="Depoimento 5" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sexto depoimento -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="imgs/prova social 04.PNG" alt="Depoimento 6" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sétimo depoimento -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="imgs/prova social 01.jpg" alt="Depoimento 7" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Oitavo depoimento -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="imgs/prova social 02.JPG" alt="Depoimento 8" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Nono depoimento -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="card text-white text-center p-4 rounded-4"
-                    style="background-color: #121212; width: 90%; max-width: 400px;">
-                    <img src="imgs/prova social 05.jpg" alt="Depoimento 9" class="img-fluid">
-                    <div class="mb-2 mt-2">
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                        <i class="bi bi-star-fill star-green"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Controles MANUAIS - SEM AUTOPLAY -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="next">
-        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
-        <span class="visually-hidden">Próximo</span>
-    </button>
-</div>
-</section>
-
-     <!-- Prova Social Premium -->
-    <div class="container">
-        <div class="social-proof fade-in-up">
-            <h3 class="display-5 mb-3" style="font-size: clamp(1.5rem, 4vw, 2.2rem);">
-               🔱  MAIS DE 10.000 PLAYERS JÁ ESCOLHERAM O PAINEL XIT! 🔱
-            </h3>
-            <div class="row text-center">
-                <div class="col-md-4 mb-2">
-                    <h4 class="display-6" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">12.847</h4>
-                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Clientes satisfeitos</p>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <h4 class="display-6" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">99.7%</h4>
-                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Taxa de aprovação</p>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <h4 class="display-6" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">24/7</h4>
-                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Suporte especializado</p>
-                </div>
-            </div>
-            <p class="mt-3" style="font-size: clamp(1rem, 2.5vw, 1.3rem);">
-                <strong>"Se você não está usando o Painel XIT, seus adversários estão levando vantagem sobre você!"</strong>
-            </p>
-        </div>
-    </div>
-
-    <!-- Pacotes Premium -->
-    <section id="pacotes" class="py-5">
+    <!-- STATS SECTION -->
+    <section class="section-padding stats-section">
         <div class="container">
-            <h2 class="display-2 text-center mb-5 fade-in-up">
-                Escolha Seu <span class="neon-primary">Painel XIT</span> ABAIXO
+            <div class="stats-grid">
+                <div>
+                    <div class="stat-number">12k+</div>
+                    <div class="stat-label">Clientes Satisfeitos</div>
+                </div>
+                <div>
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Taxa de Aprovação</div>
+                </div>
+                <div>
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Suporte Online</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF CAROUSEL -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-size: 2.5rem;">QUEM USA <span class="text-primary">APROVA</span>
             </h2>
-            
-            <div class="row g-4 justify-content-center">
-                <!-- Painel Android -->
-                <div class="col-lg-4 fade-in-left">
-                    <div class="package-card">
-                        <img src="imgs/android.png" alt="Android" class="package-image">
-                        
-                        <h3 class="package-title text-center"> <span class="neon-primary">ANDROID</span> </h3>
-                        <p class="text-center text-muted mb-4">
-                            O painel mais avançado para Android
-                        </p>
-                        
-                          <ul class="package-features">
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Painel Mod Menu FFH4X</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Função HS pescoço + Bypass</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Mira automática 100% capa</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> 2x Automática</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Rastreamento de cabeça</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> UMP AUTOMÁTICA</li>
-                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aimbot Cabeça</li>
-                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100% Anti-Ban/Anti-BlackList!</li>
-                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Suporte 24h via WhatsApp</li>
-                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 7 Dias de Garantia</li>
-                    </ul>
-                        
-                        <div class="price-section">
-                            <div class="old-price">De R$ 147,90</div>
-                            <span style="color: #ffffff;">Por apenas</span>
-                            <div class="current-price">R$ 29,90</div>
-                            <a href="https://go.perfectpay.com.br/PPU38CPTN1D" class="cta-premium w-100">
-                              🛒 COMPRAR COM DESCONTO! 
-                            </a>
-                        </div>
+
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Depoimentos -->
+                    <div class="testimonial-card">
+                        <img src="imgs/pvsocial (6).jpg" alt="Depoimento" class="testimonial-img">
+                        <div class="stars text-center"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="imgs/pvsocial (2).jpg" alt="Depoimento" class="testimonial-img">
+                        <div class="stars text-center"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="imgs/prova social 03.PNG" alt="Depoimento" class="testimonial-img">
+                        <div class="stars text-center"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="imgs/pvsocial (4).jpg" alt="Depoimento" class="testimonial-img">
+                        <div class="stars text-center"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     </div>
                 </div>
-                
-                <!-- Painel iPhone -->
-                <div class="col-lg-4 fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="package-card">
-                        <img src="imgs/iphone.png" alt="iPhone" class="package-image">
-                        
-                        <h3 class="package-title text-center"><span class="neon-primary">IPHONE/IOS</span></h3>
-                        <p class="text-center text-muted mb-4">
-                             O painel mais Completo para iPhone/iOS
-                        </p>
-                              <ul class="package-features">
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Painel Mod Menu FFH4X</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Função HS pescoço + Bypass</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Mira automática 100% capa</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> 2x Automática</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Rastreamento de cabeça</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> UMP AUTOMÁTICA</li>
-                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aimbot Cabeça</li>
-                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100% Anti-Ban/Anti-BlackList!</li>
-                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Suporte 24h via WhatsApp</li>
-                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 7 Dias de Garantia</li>
-                    </ul>
-                        
-                        <div class="price-section">
-                            <div class="old-price">De R$ 147,90</div>
-                            <span style="color: #ffffff;">Por apenas</span>
-                            <div class="current-price">R$ 29,90</div>
-                            <a href="https://go.perfectpay.com.br/PPU38CPTMME" class="cta-premium w-100">
-                                🛒 COMPRAR COM DESCONTO! 
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-     <!-- VIP Package -->
-                <div class="package-card featured">
-                    <div class="package-badge">Mais Popular!</div>
-                    <div class="package-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                    </div>
-                    <h3 class="package-title">VIP</h3>
-                    <p class="package-subtitle">Acesso VITALÍCIO + Bônus Exclusivos</p>
-                    
-                    <ul class="package-features">
-                        <li class="crown"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg> Painel Mod Menu FFH4X</li>
-                        <li class="crown"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg> Acesso VIP Permanente</li>
-                        <li class="crown"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg> No Recoil (não espalha tiros)</li>
-                        <li class="crown"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg> 2x Xitada + 2x Automática</li>
-                        <li class="crown"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg> Rastreamento de cabeça avançado</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Função HS pescoço + Bypass</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> UMP automática premium</li>
-                        <li class="fire"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> Disfarce 100% indetectável</li>
-                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Suporte VIP Exclusivo 24h</li>
-                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Atualizações vitalícias</li>
-                        <li class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Garantia Total de 30 Dias!</li>
-                    </ul>
-                    
-                    <div class="package-price">
-                        <p class="price-old">De R$ 299,90</p>
-                        <p class="price-label">Por apenas</p>
-                        <p class="price-new">R$ 49,90</p>
-                    </div>
-                    
-                    <a href="https://go.perfectpay.com.br/PPU38CPTN1E" target="_blank" class="package-button gold">👑 COMPRAR VIP AGORA!</a>
-                </div>
+                <p class="text-center text-muted mt-3"><small>Arraste para o lado para ver mais</small></p>
             </div>
         </div>
     </section>
 
-  <!-- Garantia Premium -->
-    <div class="container">
-        <div class="guarantee-section fade-in-up">
-            <h2 class="display-4 mb-3" style="margin-top: 30px; font-size: clamp(1.8rem, 4vw, 2.5rem);">
-                🛡️ GARANTIA TOTAL DE SATISFAÇÃO! 🛡️
-            </h2>
-            <p class="mb-3" style="font-size: clamp(1.1rem, 2.5vw, 1.4rem);">
-                <strong>Compre com total segurança e confiança!</strong>
-            </p>
-            <div class="row text-center">
-                <div class="col-md-6 mb-3">
-                    <h5 class="neon-primary" style="font-size: clamp(1rem, 2vw, 1.2rem);">✅ 7 DIAS DE GARANTIA</h5>
-                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Não funcionou? Devolvemos 100% do seu dinheiro!</p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <h5 class="neon-primary" style="font-size: clamp(1rem, 2vw, 1.2rem);">✅ SUPORTE 24H</h5>
-                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Qualquer problema, nossa equipe resolve na hora!</p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <h5 class="neon-primary" style="font-size: clamp(1rem, 2vw, 1.2rem);">✅ INSTALAÇÃO GRÁTIS</h5>
-                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Não consegue instalar? Fazemos para você!</p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <h5 class="neon-primary" style="font-size: clamp(1rem, 2vw, 1.2rem);">✅ ANTI-BAN GARANTIDO</h5>
-                    <p style="font-size: clamp(0.9rem, 2vw, 1rem);">Levou ban? Reembolsamos tudo!</p>
-                </div>
-            </div>
-            <p class="mt-3" style="font-size: clamp(1rem, 2.5vw, 1.2rem);">
-                <strong>"Sua satisfação é nossa prioridade. Compre sem medo!"</strong>
-            </p>
+    <!-- PRICING SECTION -->
+    <section class="section-padding pricing-section" id="pacotes">
+        <div class="hero-bg" style="transform: scaleY(-1); top: auto; bottom: 0;">
+            <div class="hero-blob" style="background: var(--color-secondary);"></div>
         </div>
-    </div>
-
-    <!-- FAQ Premium -->
-    <section class="py-5" id="faq">
         <div class="container">
-            <div class="faq-section fade-in-up">
-                <h2 class="display-3 text-center mb-5">
-                    Perguntas <span class="neon-primary">Frequentes</span>
-                </h2>
-                
-                <div class="accordion" id="faqAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                COMO FUNCIONA O PRAZO DE GARANTIA?
-                            </button>
-                        </h2>
-                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Você tem até <strong>7 dias completos</strong> para testar nosso painel. 
-                                Se não ficar 100% satisfeito, devolvemos seu dinheiro integral, 
-                                sem perguntas e sem burocracia.
-                            </div>
-                        </div>
+            <h2 class="text-center" style="font-size: 3rem;">ESCOLHA SEU <span class="text-accent">PLANO</span></h2>
+            <p class="text-center text-muted">Acesso imediato após o pagamento.</p>
+
+            <div class="pricing-grid">
+
+                <!-- PLANO ANDROID -->
+                <div class="pricing-card">
+                    <img src="imgs/android.png" alt="Android" style="height: 60px; margin: 0 auto 20px;">
+                    <h3 class="plan-name text-center text-primary">ANDROID</h3>
+                    <div class="text-center">
+                        <div class="old-price">R$ 147,90</div>
+                        <div class="plan-price">R$ 29,90</div>
                     </div>
-                    
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                COMO RECEBO O PAINEL APÓS A COMPRA?
-                            </button>
-                        </h2>
-                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                <strong>Entrega instantânea!</strong> Assim que o pagamento for aprovado, 
-                                você recebe automaticamente todos os arquivos e instruções no seu email. 
-                                Pagou, já pode começar a dominar!
-                            </div>
-                        </div>
+
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Painel Mod Menu FFH4X</li>
+                        <li><i class="fas fa-check-circle"></i> Mira 100% Automática</li>
+                        <li><i class="fas fa-check-circle"></i> Rastreamento de Cabeça</li>
+                        <li><i class="fas fa-shield-alt"></i> 100% Anti-Ban</li>
+                        <li><i class="fas fa-headset"></i> Suporte 24h</li>
+                    </ul>
+
+                    <a href="https://go.perfectpay.com.br/PPU38CPTN1D" class="btn btn-primary d-flex">COMPRAR AGORA</a>
+                </div>
+
+                <!-- PLANO VIP (FEATURED) -->
+                <div class="pricing-card featured">
+                    <span class="badge-popular">👑 MAIS VENDIDO</span>
+                    <div class="text-center mb-3">
+                        <i class="fas fa-crown text-accent" style="font-size: 3rem;"></i>
                     </div>
-                    
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                A INSTALAÇÃO É COMPLICADA?
-                            </button>
-                        </h2>
-                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                <strong>Super simples!</strong> O processo leva menos de 5 minutos. 
-                                Incluímos tutorial em vídeo passo a passo e nossa equipe de suporte 
-                                está disponível 24h para ajudar. Se não conseguir, instalamos para você!
-                            </div>
-                        </div>
+                    <h3 class="plan-name text-center text-accent">VIP LIFETIME</h3>
+                    <div class="text-center">
+                        <div class="old-price">R$ 299,90</div>
+                        <div class="plan-price">R$ 49,90</div>
+                        <small>PAGUE UMA VEZ, USE PARA SEMPRE</small>
                     </div>
-                    
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                                É REALMENTE ANTI-BAN?
-                            </button>
-                        </h2>
-                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                <strong>100% Anti-ban garantido!</strong> Nosso sistema é indetectável 
-                                e já está sendo usado por mais de 10.000 players sem problemas. 
-                                Caso aconteça algo impossível, reembolsamos tudo!
-                            </div>
-                        </div>
+
+                    <ul class="features-list">
+                        <li class="pro"><i class="fas fa-crown"></i> <strong>Tudo do plano Android/iOS</strong></li>
+                        <li class="pro"><i class="fas fa-bolt"></i> 2x Mais Precisão (Regedit VIP)</li>
+                        <li class="pro"><i class="fas fa-ghost"></i> Disfarce Indetectável</li>
+                        <li class="pro"><i class="fas fa-infinity"></i> <strong>Acesso VITALÍCIO</strong></li>
+                        <li class="pro"><i class="fas fa-star"></i> Bônus Exclusivos</li>
+                    </ul>
+
+                    <a href="https://go.perfectpay.com.br/PPU38CPTN1E" class="btn btn-gold d-flex">GARANTIR ACESSO
+                        VIP</a>
+                </div>
+
+                <!-- PLANO IOS -->
+                <div class="pricing-card">
+                    <img src="imgs/iphone.png" alt="IOS" style="height: 60px; margin: 0 auto 20px;">
+                    <h3 class="plan-name text-center text-secondary">IPHONE / IOS</h3>
+                    <div class="text-center">
+                        <div class="old-price">R$ 147,90</div>
+                        <div class="plan-price">R$ 29,90</div>
+                    </div>
+
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Painel Otimizado iOS</li>
+                        <li><i class="fas fa-check-circle"></i> Sem Jailbreak necessário</li>
+                        <li><i class="fas fa-check-circle"></i> Aimbot Suave</li>
+                        <li><i class="fas fa-shield-alt"></i> Anti-Blacklist</li>
+                        <li><i class="fas fa-headset"></i> Suporte 24h</li>
+                    </ul>
+
+                    <a href="https://go.perfectpay.com.br/PPU38CPTMME" class="btn btn-secondary d-flex">COMPRAR
+                        AGORA</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUARANTEE -->
+    <section class="section-padding text-center">
+        <div class="container">
+            <div
+                style="background: var(--bg-card); padding: 3rem; border-radius: 30px; border: var(--glass-border); max-width: 800px; margin: 0 auto;">
+                <i class="fas fa-shield-check text-primary" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                <h2 class="mb-3">RISCO ZERO PARA VOCÊ</h2>
+                <p class="text-muted mb-4">
+                    Garantimos a qualidade do nosso produto. Se você não conseguir instalar ou não gostar,
+                    devolvemos 100% do seu dinheiro em até 7 dias. Sem perguntas.
+                </p>
+                <div class="d-flex justify-center gap-2" style="font-size: 2rem; color: #ccc;">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-pix"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-padding" id="faq">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="text-center mb-5">PERGUNTAS FREQUENTES</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Tem risco de ban? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Não! Nosso painel utiliza uma tecnologia exclusiva de bypass que atua "fora" do jogo,
+                            tornando-o invisível para o sistema anti-cheat da Garena. Temos mais de 10 mil clientes
+                            ativos sem problemas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Funciona em qual celular? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Funciona em TODOS os modelos Android (Samsung, Xiaomi, Motorola, etc) e todos os modelos de
+                            iPhone (do 7 ao 15 Pro Max).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Como recebo o acesso? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>O envio é IMEDIATO e AUTOMÁTICO. Assim que o pagamento é confirmado, você recebe um e-mail
+                            com o link de download, login, senha e vídeos tutoriais de instalação.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Preciso formatar o celular? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Não! A instalação é simples e não exige formatação nem root/jailbreak.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Premium -->
-    <footer class="py-5" style="background: var(--secondary-bg); border-top: 1px solid rgba(255, 255, 255, 0.1);">
+    <!-- FOOTER -->
+    <footer>
         <div class="container text-center">
-            <p class="mb-2" style="font-size: clamp(0.9rem, 2vw, 1rem);">&copy; 2025 New Sensi. Todos os direitos reservados.</p>
-            <p class="mb-2" style="font-size: clamp(0.85rem, 1.8vw, 0.95rem);">
-                Instagram: 
-                <a href="https://instagram.com/new.sensi.ff" target="_blank" class="neon-primary">@new.sensi.ff</a>
-            </p>
-            <p class="text-muted" style="font-size: clamp(0.8rem, 1.5vw, 0.9rem);">Desenvolvido com ❤️ pela equipe <strong class="neon-primary">New Sensi</strong></p>
+            <img src="imgs/logo.png" alt="Logo" style="height: 40px; margin: 0 auto 20px; opacity: 0.5;">
+            <p class="text-muted mb-3">&copy; 2025 Painel XIT. Todos os direitos reservados.</p>
+
+            <div class="d-flex justify-center gap-1">
+                <a href="#" class="text-muted hover:text-primary"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-muted hover:text-primary"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="#" class="text-muted hover:text-primary"><i class="fab fa-discord fa-lg"></i></a>
+            </div>
         </div>
     </footer>
 
-    <!-- Meta Pixel Code -->
+    <!-- NOTIFICATION POPUP -->
+    <div id="notificationArea"></div>
+
+    <!-- SCRIPTS -->
     <script>
-        !function(f,b,e,v,n,t,s) {
-            if(f.fbq) return; n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
-            n.queue=[]; t=b.createElement(e); t.async=!0;
-            t.src=v; s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)
-        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '3525977697696631');
-        fbq('track', 'PageView');
-    </script>
+        // Data Atual
+        const dateOptions = { day: 'numeric', month: 'long' };
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('pt-BR', dateOptions);
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Sistema Premium de Interações COM DATA REAL -->
-    <script>
-        class PremiumInteractionSystem {
-            constructor() {
-                this.salesCounter = document.getElementById('salesCount');
-                this.userCounter = document.getElementById('userCounter');
-                this.notificationContainer = document.getElementById('notificationContainer');
-                this.dateElement = document.getElementById('currentDate');
-                
-                this.currentSales = 252;
-                this.currentUsers = 998;
-                
-                this.init();
+        // Contador de Vendas
+        const salesCounter = document.getElementById('salesCount');
+        let sales = 250;
+        setInterval(() => {
+            if (Math.random() > 0.6) {
+                sales++;
+                salesCounter.textContent = sales;
+                salesCounter.parentElement.classList.add('pulse'); // Adicionar classe CSS se quiser animação
             }
-            
-            init() {
-                this.updateDate();
-                this.startNotifications();
-                this.startCounters();
-                this.initDraggable();
-                this.initAnimations();
-                this.initInteractions();
-            }
-            
-            // Atualizar data real
-            updateDate() {
-                const now = new Date();
-                const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-                const dateStr = now.toLocaleDateString('pt-BR', options);
-                if (this.dateElement) {
-                    this.dateElement.textContent = `- ${dateStr}`;
-                }
-                
-                // Atualizar a cada minuto
-                setInterval(() => {
-                    const now = new Date();
-                    const dateStr = now.toLocaleDateString('pt-BR', options);
-                    if (this.dateElement) {
-                        this.dateElement.textContent = `- ${dateStr}`;
-                    }
-                }, 60000);
-            }
-            
-            // Sistema de notificações otimizado para mobile
-            showNotification() {
-                const names = [
-                    "João Silva", "Bella", "Maria Santos", "Adriano silva", "Pedro Costa", "Ana", "Vitor", "Fabinho", "Carlos Souza", "Isabelle", "Rafaela", "Kauane", "Natally",
-                    "Juliana Oliveira", "Rafael Alves", "Camila Ferreira", "Lucas Pereira", "Beatriz Rocha", "Rafael", "Matheus", "Juliana", "Fernanda", "Rodrigo", "Davi", "Diego",
-                    "Gabriel Martins", "Larissa Cunha", "Leonardo Freitas", "Thiago Ribeiro", "Camila Rocha", "Adriano", "Natália Gomes", "Diego Nascimento"
-                ];
-                
-                const products = ["☠️ Painel XIT Android", "☠️ Painel XIT iPhone/iOS", "👑 Painel 2 em 1 Android/iPhone!"];
-                const cities = ["São Paulo", "Rio de Janeiro", "Vitória", "Belo Horizonte", "Salvador", "João Pessoa", "Campina Grande", "Campo Grande", "Salvador", "Porto Alegre", "Curitiba", "Maceió",
-                                "Recife", "Natal", "Brasília", "Fortaleza"];
-                
-                const name = names[Math.floor(Math.random() * names.length)];
-                const product = products[Math.floor(Math.random() * products.length)];
-                const city = cities[Math.floor(Math.random() * cities.length)];
-                
-                const notification = document.createElement('div');
-                notification.className = 'purchase-notification';
-                notification.innerHTML = `
-                    <div class="notification-header">
-                        <div class="notification-icon">
-                            <i class="fas fa-fire"></i>
-                        </div>
-                        <div class="notification-text">
-                            <p class="notification-title">🔥 NOVA COMPRA!</p>
-                            <p class="notification-product"><strong>${product}</strong></p>
-                            <p class="notification-location">${name} • ${city}</p>
-                        </div>
-                    </div>
-                `;
-                
-                this.notificationContainer.appendChild(notification);
-                
-                // Mostrar notificação
-                setTimeout(() => notification.classList.add('show'), 100);
-                
-                // Auto remover após 5 segundos
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.classList.remove('show');
-                        setTimeout(() => notification.remove(), 500);
-                    }
-                }, 5000);
-            }
-            
-            // Sistema de notificações
-            startNotifications() {
-                const showNotification = () => {
-                    this.showNotification();
-                    
-                    // Próxima notificação em 8-15 segundos
-                    const nextDelay = Math.floor(Math.random() * 7000) + 8000;
-                    setTimeout(showNotification, nextDelay);
-                };
-                
-                // Primeira notificação após 3 segundos
-                setTimeout(showNotification, 3000);
-            }
-            
-            // Atualizar contadores
-            updateCounters() {
-                // Atualizar vendas
-                if (this.salesCounter) {
-                    const increase = Math.floor(Math.random() * 3) + 1;
-                    this.currentSales += increase;
-                    this.salesCounter.textContent = this.currentSales;
-                }
-                
-                // Atualizar usuários
-                if (this.userCounter) {
-                    const increase = Math.floor(Math.random() * 8) + 3;
-                    this.currentUsers += increase;
-                    this.userCounter.textContent = this.currentUsers.toLocaleString('pt-BR');
-                }
-            }
-            
-            startCounters() {
-                const updateCounters = () => {
-                    this.updateCounters();
-                    
-                    // Próxima atualização em 15-30 segundos
-                    const nextUpdate = Math.floor(Math.random() * 15000) + 15000;
-                    setTimeout(updateCounters, nextUpdate);
-                };
-                
-                // Primeira atualização após 10 segundos
-                setTimeout(updateCounters, 10000);
-            }
-            
-            // Contador arrastável otimizado para mobile
-            initDraggable() {
-                const counter = document.getElementById('salesCounterMobile');
-                if (!counter) return;
-                
-                let isDragging = false;
-                let currentX, currentY, initialX, initialY;
-                let xOffset = 0, yOffset = 0;
+        }, 15000);
 
-                const dragStart = (e) => {
-                    const clientX = e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
-                    const clientY = e.type === "touchstart" ? e.touches[0].clientY : e.clientY;
-                    
-                    initialX = clientX - xOffset;
-                    initialY = clientY - yOffset;
-
-                    if (e.target === counter || counter.contains(e.target)) {
-                        isDragging = true;
-                        counter.classList.add('dragging');
-                    }
-                };
-
-                const dragMove = (e) => {
-                    if (isDragging) {
-                        e.preventDefault();
-                        
-                        const clientX = e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
-                        const clientY = e.type === "touchmove" ? e.touches[0].clientY : e.clientY;
-                        
-                        currentX = clientX - initialX;
-                        currentY = clientY - initialY;
-
-                        xOffset = currentX;
-                        yOffset = currentY;
-
-                        // Limitar dentro da viewport
-                        const rect = counter.getBoundingClientRect();
-                        const maxX = window.innerWidth - rect.width;
-                        const maxY = window.innerHeight - rect.height;
-
-                        xOffset = Math.max(0, Math.min(xOffset, maxX));
-                        yOffset = Math.max(0, Math.min(yOffset, maxY));
-
-                        counter.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-                        counter.style.position = 'fixed';
-                        counter.style.top = '60px';
-                        counter.style.right = 'auto';
-                        counter.style.left = '20px';
-                    }
-                };
-
-                const dragEnd = () => {
-                    if (isDragging) {
-                        isDragging = false;
-                        counter.classList.remove('dragging');
-                    }
-                };
-
-                // Mouse events
-                counter.addEventListener('mousedown', dragStart);
-                document.addEventListener('mousemove', dragMove);
-                document.addEventListener('mouseup', dragEnd);
-
-                // Touch events para mobile
-                counter.addEventListener('touchstart', dragStart, { passive: false });
-                document.addEventListener('touchmove', dragMove, { passive: false });
-                document.addEventListener('touchend', dragEnd);
-            }
-            
-            // Animações de entrada
-            initAnimations() {
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
-                
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.animationPlayState = 'running';
-                        }
-                    });
-                }, observerOptions);
-                
-                document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
-                    el.style.animationPlayState = 'paused';
-                    observer.observe(el);
-                });
-            }
-            
-            // Micro-interações
-            initInteractions() {
-                // Hover effects para cards
-                document.querySelectorAll('.hover-lift').forEach(card => {
-                    card.addEventListener('mouseenter', () => {
-                        card.style.transform = 'translateY(-8px)';
-                    });
-                    
-                    card.addEventListener('mouseleave', () => {
-                        card.style.transform = 'translateY(0)';
-                    });
-                });
-                
-                // Efeito de glow
-                document.querySelectorAll('.hover-glow').forEach(element => {
-                    element.addEventListener('mouseenter', () => {
-                        element.style.boxShadow = '0 0 30px rgba(0, 255, 65, 0.3)';
-                    });
-                    
-                    element.addEventListener('mouseleave', () => {
-                        element.style.boxShadow = '';
-                    });
-                });
-                
-                // Smooth scroll
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const target = document.querySelector(this.getAttribute('href'));
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }
-                    });
-                });
-            }
-        }
-        
-        // Inicializar sistema
-        document.addEventListener('DOMContentLoaded', function() {
-            new PremiumInteractionSystem();
-            
-            // Preload de imagens críticas
-            const criticalImages = [
-                'imgs/logo.png',
-                'imgs/android.png', 
-                'imgs/iphone.png',
-                'imgs/CLT.jpg'
-            ];
-            
-            criticalImages.forEach(src => {
-                const img = new Image();
-                img.src = src;
+        // FAQ Interaction
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
             });
         });
-        
-        // Otimização de performance
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(() => {
-                console.log('✅ Sistema Premium inicializado com sucesso!');
-            });
+
+        // Sales Notification System
+        const names = ['Gabriel', 'Pedro', 'Lucas', 'Matheus', 'João', 'Felipe', 'Bruno', 'Daniel', 'Gustavo'];
+        const locations = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais', 'Bahia', 'Paraná', 'Ceará'];
+        const products = ['Painel Android', 'Painel iOS', 'Acesso VIP'];
+
+        function showNotification() {
+            const name = names[Math.floor(Math.random() * names.length)];
+            const location = locations[Math.floor(Math.random() * locations.length)];
+            const product = products[Math.floor(Math.random() * products.length)];
+
+            const notify = document.createElement('div');
+            notify.className = 'sales-popup';
+            notify.innerHTML = `
+                <div class="popup-icon"><i class="fas fa-check"></i></div>
+                <div class="popup-content">
+                    <h4>${name} de ${location}</h4>
+                    <p>Comprou <strong>${product}</strong> agora pouco</p>
+                    <small style="color: var(--color-primary); font-size: 0.7rem;">Verificado</small>
+                </div>
+            `;
+
+            document.body.appendChild(notify);
+
+            // Trigger animation
+            setTimeout(() => notify.classList.add('show'), 100);
+
+            // Remove
+            setTimeout(() => {
+                notify.classList.remove('show');
+                setTimeout(() => notify.remove(), 500);
+            }, 5000);
         }
+
+        // Iniciar notificações após 5s e repetir a cada 10-20s
+        setTimeout(() => {
+            showNotification();
+            setInterval(showNotification, Math.random() * 10000 + 10000);
+        }, 5000);
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeUp 0.8s ease-out forwards';
+                }
+            });
+        });
+
+        document.querySelectorAll('.feature-card, .pricing-card').forEach(el => {
+            el.style.opacity = '0'; // hide initially
+            observer.observe(el);
+        });
+
     </script>
 </body>
+
 </html>
-
-
-
